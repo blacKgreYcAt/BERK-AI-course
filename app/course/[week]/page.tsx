@@ -98,10 +98,10 @@ export default function CoursePage({ params }: any) {
                 {course.description}
               </p>
               <div style={{ borderTop: '2px solid #333', paddingTop: '20px', marginTop: '20px' }}>
-                <p style={{ fontSize: '14px', color: '#666', marginBottom: '15px' }}>
+                <p style={{ fontSize: '14px', color: '#999', marginBottom: '15px' }}>
                   ⏱️ {course.duration_minutes} 分鐘課程
                 </p>
-                <p style={{ fontSize: '14px', color: '#666' }}>
+                <p style={{ fontSize: '14px', color: '#ccc', lineHeight: 1.6 }}>
                   📝 {course.content}
                 </p>
               </div>
