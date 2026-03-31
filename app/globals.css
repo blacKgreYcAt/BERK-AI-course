@@ -1,26 +1,33 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #00aeef;
+  --primary-light: #66d9ff;
+  --primary-dark: #0088bb;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply antialiased;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .clay-card {
+    @apply rounded-clay bg-white shadow-clay hover:shadow-clay-lg transition-all duration-300;
+  }
+
+  .clay-button {
+    @apply rounded-clay bg-primary text-white font-semibold hover:bg-primary-dark transition-all duration-300 shadow-clay hover:shadow-clay-lg;
+  }
+
+  .clay-button-outline {
+    @apply rounded-clay border-2 border-primary text-primary font-semibold hover:bg-primary/5 transition;
+  }
 }
