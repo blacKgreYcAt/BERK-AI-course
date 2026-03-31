@@ -49,33 +49,64 @@ export default function Home() {
         <div className="container">
           <h2>課程設計</h2>
 
-          <div className="case-grid">
-            {courseData.slice(0, 4).map((course) => (
-              <div key={course.id} className="case-card">
-                <div className="duration">
-                  第 {course.week} 週 • 模組 {course.module}
-                </div>
-                <h3>{course.title}</h3>
-                <p>{course.description}</p>
-                <p style={{ color: '#666', fontSize: '14px', marginTop: '20px' }}>
-                  ⏱️ {course.duration_minutes} 分鐘 → {Math.ceil(course.duration_minutes / 60)} 小時課程
-                </p>
-                <Link
-                  href={`/course/${course.week}`}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '30px', marginTop: '60px' }}>
+            {courseData.map((course) => (
+              <Link key={course.id} href={`/course/${course.week}`}>
+                <div
                   style={{
-                    display: 'inline-block',
-                    marginTop: '20px',
-                    padding: '10px 20px',
-                    border: '2px solid #00aeef',
-                    color: '#00aeef',
-                    textTransform: 'uppercase',
-                    fontWeight: 700,
-                    fontSize: '12px',
+                    aspectRatio: '1',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    padding: '30px',
+                    background: '#111111',
+                    border: '3px solid #00aeef',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    const el = e.currentTarget;
+                    el.style.transform = 'translate(-5px, -5px)';
+                    el.style.boxShadow = '5px 5px 0 #00aeef';
+                  }}
+                  onMouseLeave={(e) => {
+                    const el = e.currentTarget;
+                    el.style.transform = 'translate(0, 0)';
+                    el.style.boxShadow = 'none';
                   }}
                 >
-                  查看詳情 →
-                </Link>
-              </div>
+                  <div>
+                    <div style={{ fontSize: '14px', textTransform: 'uppercase', color: '#00aeef', marginBottom: '15px', letterSpacing: '2px', fontWeight: 700 }}>
+                      第 {course.week} 週 • 模組 {course.module}
+                    </div>
+                    <h3 style={{ fontSize: '20px', fontWeight: 900, marginBottom: '15px', color: '#00aeef', lineHeight: 1.2 }}>
+                      {course.title}
+                    </h3>
+                    <p style={{ fontSize: '16px', color: '#ccc', marginBottom: '15px', lineHeight: 1.4 }}>
+                      {course.description}
+                    </p>
+                  </div>
+                  <div>
+                    <p style={{ fontSize: '14px', color: '#666', marginBottom: '15px' }}>
+                      ⏱️ {course.duration_minutes} 分鐘
+                    </p>
+                    <div
+                      style={{
+                        display: 'inline-block',
+                        padding: '10px 15px',
+                        border: '2px solid #00aeef',
+                        color: '#00aeef',
+                        textTransform: 'uppercase',
+                        fontWeight: 700,
+                        fontSize: '13px',
+                      }}
+                    >
+                      查看詳情 →
+                    </div>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
