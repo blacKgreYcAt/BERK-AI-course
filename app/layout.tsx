@@ -13,21 +13,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gemini 企業協作大師課 - 大豐集團",
-  description: "四週完整課程，掌握 Gemini 六大神器，提升企業 AI 應用能力。",
+  title: "Gemini 企業協作大師課",
+  description: "四週完整課程，掌握 Gemini 六大神器",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="zh-TW" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="bg-white text-gray-900">{children}</body>
     </html>
   );
 }
