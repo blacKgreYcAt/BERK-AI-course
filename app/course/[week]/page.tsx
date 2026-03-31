@@ -8,13 +8,18 @@ export default function CoursePage({ params }: any) {
   const [week, setWeek] = useState<number | null>(null)
   const [mounted, setMounted] = useState(false)
   const [currentPageIndex, setCurrentPageIndex] = useState(0)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const resolveParams = async () => {
-      const resolvedParams = await Promise.resolve(params)
-      const weekNum = parseInt(resolvedParams.week)
-      setWeek(weekNum)
-      setMounted(true)
+      try {
+        const resolvedParams = await Promise.resolve(params)
+        const weekNum = parseInt(resolvedParams.week)
+        setWeek(weekNum)
+        setMounted(true)
+      } catch (err) {
+        setError('參數解析失敗')
+      }
     }
     resolveParams()
   }, [params])
@@ -23,6 +28,20 @@ export default function CoursePage({ params }: any) {
     return (
       <div style={{ background: '#0a0a0a', color: '#ffffff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <p style={{ fontSize: '20px' }}>加載中...</p>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div style={{ background: '#0a0a0a', color: '#ffffff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
+          <h1 style={{ fontSize: '48px', fontWeight: 900, marginBottom: '20px', color: '#ff6b6b' }}>錯誤</h1>
+          <p style={{ fontSize: '18px', marginBottom: '20px' }}>{error}</p>
+          <Link href="/" style={{ color: '#00aeef', fontSize: '18px', fontWeight: 700 }}>
+            ← 返回首頁
+          </Link>
+        </div>
       </div>
     )
   }
@@ -42,13 +61,29 @@ export default function CoursePage({ params }: any) {
     )
   }
 
-  // 計算當前課程和頁面
+  // 計算總頁數並驗證有效性
+  const totalPages = weekCourses.reduce((sum, c) => sum + (c.pages?.length || 0), 0)
+
+  if (totalPages === 0) {
+    return (
+      <div style={{ background: '#0a0a0a', color: '#ffffff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
+          <h1 style={{ fontSize: '48px', fontWeight: 900, marginBottom: '20px' }}>課程無效：沒有頁面內容</h1>
+          <Link href="/" style={{ color: '#00aeef', fontSize: '18px', fontWeight: 700 }}>
+            ← 返回首頁
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
+  // 計算當前課程和頁面（加入邊界檢查）
   let totalPageCount = 0
   let currentCourseIndex = 0
-  let currentPageInCourse = currentPageIndex
+  let currentPageInCourse = 0
 
   for (let i = 0; i < weekCourses.length; i++) {
-    const coursePageCount = weekCourses[i].pages.length
+    const coursePageCount = weekCourses[i].pages?.length || 0
     if (totalPageCount + coursePageCount > currentPageIndex) {
       currentCourseIndex = i
       currentPageInCourse = currentPageIndex - totalPageCount
@@ -57,9 +92,49 @@ export default function CoursePage({ params }: any) {
     totalPageCount += coursePageCount
   }
 
+  // 邊界檢查
+  if (currentCourseIndex >= weekCourses.length) {
+    return (
+      <div style={{ background: '#0a0a0a', color: '#ffffff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
+          <h1 style={{ fontSize: '48px', fontWeight: 900, marginBottom: '20px', color: '#ff6b6b' }}>課程索引超出範圍</h1>
+          <Link href="/" style={{ color: '#00aeef', fontSize: '18px', fontWeight: 700 }}>
+            ← 返回首頁
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
   const currentCourse = weekCourses[currentCourseIndex]
+
+  if (!currentCourse.pages || currentCourse.pages.length === 0) {
+    return (
+      <div style={{ background: '#0a0a0a', color: '#ffffff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
+          <h1 style={{ fontSize: '48px', fontWeight: 900, marginBottom: '20px', color: '#ff6b6b' }}>課程頁面為空</h1>
+          <Link href="/" style={{ color: '#00aeef', fontSize: '18px', fontWeight: 700 }}>
+            ← 返回首頁
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
   const currentPage = currentCourse.pages[currentPageInCourse]
-  const totalPages = weekCourses.reduce((sum, c) => sum + c.pages.length, 0)
+
+  if (!currentPage) {
+    return (
+      <div style={{ background: '#0a0a0a', color: '#ffffff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
+          <h1 style={{ fontSize: '48px', fontWeight: 900, marginBottom: '20px', color: '#ff6b6b' }}>頁面內容遺失</h1>
+          <Link href="/" style={{ color: '#00aeef', fontSize: '18px', fontWeight: 700 }}>
+            ← 返回首頁
+          </Link>
+        </div>
+      </div>
+    )
+  }
 
   const handlePrevious = () => {
     if (currentPageIndex > 0) {
