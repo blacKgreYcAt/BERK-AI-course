@@ -2,9 +2,31 @@
 
 import Link from 'next/link'
 import { courseData } from '@/lib/course-data'
+import { useSearchParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
-export default function CoursePage({ params }: { params: { week: string } }) {
-  const week = parseInt(params.week)
+export default function CoursePage({ params }: any) {
+  const [week, setWeek] = useState<number | null>(null)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    const resolveParams = async () => {
+      const resolvedParams = await Promise.resolve(params)
+      const weekNum = parseInt(resolvedParams.week)
+      setWeek(weekNum)
+      setMounted(true)
+    }
+    resolveParams()
+  }, [params])
+
+  if (!mounted || week === null) {
+    return (
+      <div style={{ background: '#0a0a0a', color: '#ffffff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <p style={{ fontSize: '20px' }}>加載中...</p>
+      </div>
+    )
+  }
+
   const weekCourses = courseData.filter((c) => c.week === week)
 
   if (weekCourses.length === 0) {
@@ -54,7 +76,6 @@ export default function CoursePage({ params }: { params: { week: string } }) {
                 padding: '40px',
                 background: '#111111',
                 transition: 'all 0.3s ease',
-                cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget;
