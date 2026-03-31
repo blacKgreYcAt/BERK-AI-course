@@ -5,6 +5,7 @@ import { courseData } from '@/lib/course-data'
 import { useEffect, useState } from 'react'
 
 export default function CoursePage({ params }: any) {
+  // 強制 Vercel 重新部署 - v2
   const [week, setWeek] = useState<number | null>(null)
 
   useEffect(() => {
