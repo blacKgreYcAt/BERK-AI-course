@@ -5,6 +5,7 @@ import { courseData } from '@/lib/course-data'
 import { useState, useEffect } from 'react'
 
 export async function generateStaticParams() {
+  // 觸發 Vercel 重新部署 - 2026-03-31
   return [
     { week: '1' },
     { week: '2' },
