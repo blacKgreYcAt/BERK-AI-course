@@ -9,10 +9,10 @@ export default function CoursePage({ params }: { params: { week: string } }) {
 
   if (weekCourses.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-        <div className="max-w-4xl mx-auto px-4 py-20 text-center">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">課程未找到</h1>
-          <Link href="/" className="text-blue-500 hover:underline">
+      <div style={{ background: '#0a0a0a', color: '#ffffff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
+          <h1 style={{ fontSize: '48px', fontWeight: 900, marginBottom: '20px' }}>課程未找到</h1>
+          <Link href="/" style={{ color: '#00aeef', fontSize: '18px', fontWeight: 700 }}>
             ← 返回首頁
           </Link>
         </div>
@@ -21,69 +21,121 @@ export default function CoursePage({ params }: { params: { week: string } }) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div style={{ background: '#0a0a0a', color: '#ffffff', minHeight: '100vh' }}>
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Link href="/" className="text-blue-500 hover:underline text-sm font-semibold">
+      <header style={{ borderBottom: '3px solid #00aeef', padding: '20px 0' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px' }}>
+          <Link href="/" style={{ color: '#00aeef', fontSize: '16px', fontWeight: 700, textDecoration: 'none' }}>
             ← 返回首頁
           </Link>
         </div>
       </header>
 
       {/* Content */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8">
-          <div className="inline-block px-4 py-2 rounded-full font-semibold mb-6" style={{ backgroundColor: 'rgba(0, 174, 239, 0.1)', color: '#00aeef' }}>
-            第 {week} 週
+      <section style={{ maxWidth: '1400px', margin: '0 auto', padding: '60px 40px' }}>
+        <div style={{ marginBottom: '40px' }}>
+          <h1 style={{ fontSize: '64px', fontWeight: 900, textTransform: 'uppercase', marginBottom: '20px' }}>
+            第 {week} 週課程
+          </h1>
+          <div style={{ borderLeft: '8px solid #00aeef', paddingLeft: '20px' }}>
+            <p style={{ fontSize: '18px', color: '#ccc' }}>
+              {weekCourses.length} 個模組 • {weekCourses.reduce((sum, c) => sum + c.duration_minutes, 0)} 分鐘
+            </p>
           </div>
         </div>
 
-        {weekCourses.map((course) => (
-          <div key={course.id} className="clay-card mb-12 p-8">
-            <div className="mb-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">{course.title}</h2>
-              <p className="text-gray-600">
-                模組 {course.module} • {course.duration_minutes} 分鐘
+        {/* Courses Grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px', marginTop: '60px' }}>
+          {weekCourses.map((course) => (
+            <div
+              key={course.id}
+              style={{
+                border: '3px solid #00aeef',
+                padding: '40px',
+                background: '#111111',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget;
+                el.style.transform = 'translate(-5px, -5px)';
+                el.style.boxShadow = '5px 5px 0 #00aeef';
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget;
+                el.style.transform = 'translate(0, 0)';
+                el.style.boxShadow = 'none';
+              }}
+            >
+              <div style={{ fontSize: '14px', textTransform: 'uppercase', color: '#00aeef', marginBottom: '15px', letterSpacing: '2px', fontWeight: 700 }}>
+                模組 {course.module}
+              </div>
+              <h3 style={{ fontSize: '24px', fontWeight: 900, marginBottom: '20px', color: '#00aeef', lineHeight: 1.2 }}>
+                {course.title}
+              </h3>
+              <p style={{ fontSize: '16px', color: '#ccc', marginBottom: '20px', lineHeight: 1.5 }}>
+                {course.description}
               </p>
+              <div style={{ borderTop: '2px solid #333', paddingTop: '20px', marginTop: '20px' }}>
+                <p style={{ fontSize: '14px', color: '#666', marginBottom: '15px' }}>
+                  ⏱️ {course.duration_minutes} 分鐘課程
+                </p>
+                <p style={{ fontSize: '14px', color: '#666' }}>
+                  📝 {course.content}
+                </p>
+              </div>
             </div>
-
-            <div className="prose prose-sm max-w-none">
-              <p className="text-gray-700 whitespace-pre-wrap leading-relaxed">{course.content}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
 
       {/* Navigation */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="flex gap-4 justify-center">
+      <section style={{ maxWidth: '1400px', margin: '0 auto', padding: '60px 40px', textAlign: 'center' }}>
+        <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
           {week > 1 && (
             <Link
               href={`/course/${week - 1}`}
-              className="btn-outline px-6 py-3"
+              style={{
+                display: 'inline-block',
+                padding: '16px 40px',
+                border: '3px solid #00aeef',
+                color: '#00aeef',
+                fontWeight: 900,
+                fontSize: '14px',
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+              }}
             >
               ← 上一週
             </Link>
           )}
           {week < 4 && (
-            <button
-              onClick={() => {
-                window.location.href = `/course/${week + 1}`
+            <Link
+              href={`/course/${week + 1}`}
+              style={{
+                display: 'inline-block',
+                padding: '16px 40px',
+                background: '#00aeef',
+                color: '#0a0a0a',
+                fontWeight: 900,
+                fontSize: '14px',
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
               }}
-              className="clay-btn px-6 py-3"
             >
               下一週 →
-            </button>
+            </Link>
           )}
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 py-8">
-        <div className="max-w-4xl mx-auto px-4 text-center text-gray-600 text-sm">
-          <p>© 2026 大豐集團 Gemini 企業協作大師課</p>
-        </div>
+      <footer style={{ borderTop: '3px solid #00aeef', padding: '40px', textAlign: 'center', color: '#666', marginTop: '60px' }}>
+        <p>© 2026 大豐集團 • AI 企業協作大師課</p>
       </footer>
     </div>
   )
