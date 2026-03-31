@@ -101,9 +101,9 @@ export default function CoursePage({ params }: any) {
                 <p style={{ fontSize: '14px', color: '#999', marginBottom: '15px' }}>
                   ⏱️ {course.duration_minutes} 分鐘課程
                 </p>
-                <p style={{ fontSize: '14px', color: '#ccc', lineHeight: 1.6 }}>
+                <div style={{ fontSize: '14px', color: '#ccc', lineHeight: 1.8, whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
                   📝 {course.content}
-                </p>
+                </div>
               </div>
             </div>
           ))}
