@@ -3,6 +3,7 @@
 import { Header } from '@/components/Header'
 import { CourseCard } from '@/components/CourseCard'
 import Link from 'next/link'
+import { useState } from 'react'
 
 const courseWeeks = [
   {
@@ -37,41 +38,50 @@ const courseWeeks = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-blue-50/30">
       <Header />
 
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
         <div className="text-center">
-          <div className="inline-block mb-6">
-            <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+          {/* Badge */}
+          <div className="inline-block mb-8 px-6 py-3 rounded-full bg-gradient-to-r from-[#00aeef]/10 to-blue-100 border border-[#00aeef]/20 backdrop-blur-sm">
+            <span className="text-[#00aeef] text-sm font-bold tracking-wide">
               ✨ Gemini 企業協作大師課
             </span>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
+          {/* Main Headline */}
+          <h1 className="text-6xl sm:text-7xl font-black text-gray-900 mb-8 leading-tight">
             讓 AI 成為你的<br />
-            <span className="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#00aeef] via-blue-400 to-[#0088bb] bg-clip-text text-transparent animate-pulse">
               24 小時超級幕僚
             </span>
           </h1>
 
-          <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+          {/* Subheadline */}
+          <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
             四週課程，八小時精華教學。從零開始，讓主管掌握 Gemini 的六大神器，提升部門 AI 應用能力，產出企業 AI 導入計畫。
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
             <Link
               href="/auth/signup"
-              className="px-8 py-4 rounded-clay-lg bg-gradient-to-r from-primary to-primary-dark text-white font-semibold hover:shadow-clay-lg transition-all duration-300 hover:-translate-y-1"
+              className="inline-block px-10 py-5 rounded-[25px] bg-gradient-to-r from-[#00aeef] to-[#0088bb] text-white font-bold text-lg
+              shadow-[0_8px_16px_rgba(0,174,239,0.2),0_12px_24px_rgba(0,136,187,0.15)]
+              hover:shadow-[0_12px_28px_rgba(0,174,239,0.3),0_16px_40px_rgba(0,136,187,0.2)]
+              hover:-translate-y-2 transition-all duration-300 transform"
             >
-              立即報名 →
+              🚀 立即報名
             </Link>
             <Link
               href="#courses"
-              className="px-8 py-4 rounded-clay-lg border-2 border-primary text-primary font-semibold hover:bg-primary/5 transition"
+              className="inline-block px-10 py-5 rounded-[25px] border-2 border-[#00aeef] text-[#00aeef] font-bold text-lg
+              hover:bg-[#00aeef]/5 transition-all duration-300
+              shadow-[0_4px_12px_rgba(0,174,239,0.1)]"
             >
-              查看課程大綱
+              📚 查看課程
             </Link>
           </div>
 
