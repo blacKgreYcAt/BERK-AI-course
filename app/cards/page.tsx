@@ -418,8 +418,14 @@ export default function CardsPage() {
       </div>
 
       {/* Footer */}
-      <div style={{ borderTop: '2px solid #0071e3', padding: '20px 40px', textAlign: 'center', color: '#666', fontSize: '14px' }}>
-        <p style={{ margin: 0 }}>💡 提示：點擊卡片翻開、使用 ← → 箭頭導覽或搜尋特定內容</p>
+      <div style={{ borderTop: '2px solid #0071e3', padding: 'clamp(16px, 5vw, 20px) clamp(16px, 8vw, 40px)', textAlign: 'center', color: '#666', fontSize: 'clamp(12px, 3vw, 14px)' }}>
+        <p style={{ margin: '0 0 12px 0' }}>💡 提示：點擊卡片翻開、使用 ← → 箭頭導覽或搜尋特定內容</p>
+        <p style={{ margin: 0, lineHeight: 1.6 }}>
+          © 2026 大豐貿易集團 • AI 企業協作課程 • 課程與網站規劃：大豐資訊Benjamin •{' '}
+          <a href="mailto:benjaminchu@tfg.com.tw" style={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600 }}>
+            我要提問
+          </a>
+        </p>
       </div>
     </div>
   )

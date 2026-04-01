@@ -137,7 +137,12 @@ export default function Home() {
       {/* Footer */}
       <footer>
         <div className="container">
-          <p>© 2026 大豐貿易集團 • AI 企業協作課程</p>
+          <p style={{ fontSize: 'clamp(12px, 3vw, 14px)', lineHeight: 1.6 }}>
+            © 2026 大豐貿易集團 • AI 企業協作課程 • 課程與網站規劃：大豐資訊Benjamin •{' '}
+            <a href="mailto:benjaminchu@tfg.com.tw" style={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600 }}>
+              我要提問
+            </a>
+          </p>
         </div>
       </footer>
     </div>

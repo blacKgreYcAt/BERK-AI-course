@@ -164,27 +164,63 @@ export default function CoursePage({ params }: { params: Promise<{ week: string 
             下一頁 →
           </button>
         </div>
+
+        {/* Footer */}
+        <div style={{
+          borderTop: '2px solid #0071e3',
+          padding: 'clamp(16px, 5vw, 20px) clamp(16px, 8vw, 40px)',
+          textAlign: 'center',
+          color: '#666',
+          fontSize: 'clamp(12px, 3vw, 14px)',
+          marginTop: '40px',
+        }}>
+          <p style={{ margin: 0, lineHeight: 1.6 }}>
+            © 2026 大豐貿易集團 • AI 企業協作課程 • 課程與網站規劃：大豐資訊Benjamin •{' '}
+            <a href="mailto:benjaminchu@tfg.com.tw" style={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600 }}>
+              我要提問
+            </a>
+          </p>
+        </div>
       </div>
     )
   }
 
   // 課程列表視圖
   return (
-    <div style={{ padding: '40px', background: '#f5f5f7', color: '#000000', minHeight: '100vh' }}>
+    <div style={{ padding: '40px', background: '#f5f5f7', color: '#000000', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Link href="/">← 返回首頁</Link>
-      <h1 style={{ fontSize: '44px', marginTop: '40px', marginBottom: '40px' }}>第 {week} 週 ({courses.length})</h1>
+      <h1 style={{ fontSize: 'clamp(32px, 8vw, 44px)', marginTop: '40px', marginBottom: '40px' }}>第 {week} 週 ({courses.length})</h1>
 
-      {courses.map(c => (
-        <div
-          key={c.id}
-          onClick={() => { setSelectedId(c.id); setPageIdx(0); }}
-          style={{ marginBottom: '30px', padding: '25px', border: '2px solid #0071e3', background: '#ffffff', cursor: 'pointer' }}
-        >
-          <h2 style={{ color: '#0071e3', marginBottom: '10px' }}>{c.title}</h2>
-          <p>{c.description}</p>
-          <p style={{ color: '#999', marginTop: '10px' }}>⏱️ {c.duration_minutes} 分鐘 | 📑 {c.pages?.length || 0} 頁</p>
-        </div>
-      ))}
+      <div style={{ flex: 1 }}>
+        {courses.map(c => (
+          <div
+            key={c.id}
+            onClick={() => { setSelectedId(c.id); setPageIdx(0); }}
+            style={{ marginBottom: '30px', padding: '25px', border: '2px solid #0071e3', background: '#ffffff', cursor: 'pointer' }}
+          >
+            <h2 style={{ color: '#0071e3', marginBottom: '10px' }}>{c.title}</h2>
+            <p>{c.description}</p>
+            <p style={{ color: '#999', marginTop: '10px' }}>⏱️ {c.duration_minutes} 分鐘 | 📑 {c.pages?.length || 0} 頁</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Footer */}
+      <div style={{
+        borderTop: '2px solid #0071e3',
+        padding: 'clamp(16px, 5vw, 20px) clamp(16px, 8vw, 40px)',
+        textAlign: 'center',
+        color: '#666',
+        fontSize: 'clamp(12px, 3vw, 14px)',
+        marginTop: '40px',
+      }}>
+        <p style={{ margin: 0, lineHeight: 1.6 }}>
+          © 2026 大豐貿易集團 • AI 企業協作課程 • 課程與網站規劃：大豐資訊Benjamin •{' '}
+          <a href="mailto:benjaminchu@tfg.com.tw" style={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600 }}>
+            我要提問
+          </a>
+        </p>
+      </div>
     </div>
   )
 }
