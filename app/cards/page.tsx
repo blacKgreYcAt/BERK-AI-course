@@ -214,8 +214,8 @@ export default function CardsPage() {
               onClick={() => setIsFlipped(!isFlipped)}
               style={{
                 width: '100%',
-                maxWidth: 'clamp(300px, 90vw, 600px)',
-                aspectRatio: '1',
+                maxWidth: 'clamp(280px, 70vw, 400px)',
+                aspectRatio: '3/4',
                 background: '#ffffff',
                 border: '3px solid #0071e3',
                 borderRadius: '16px',
@@ -261,12 +261,12 @@ export default function CardsPage() {
                 zIndex: 1,
                 width: '100%',
                 height: '100%',
-                padding: 'clamp(10px, 3vw, 40px)',
+                padding: 'clamp(12px, 4vw, 30px)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                gap: 'clamp(6px, 1.5vw, 16px)',
+                gap: 'clamp(8px, 2vw, 14px)',
                 overflow: 'visible',
                 boxSizing: 'border-box',
               }}>
@@ -327,7 +327,7 @@ export default function CardsPage() {
                 {/* Card Content */}
                 <div style={{
                   fontSize: 'clamp(12px, 3vw, 18px)',
-                  lineHeight: 1.5,
+                  lineHeight: 1.6,
                   color: '#ffffff',
                   flex: 1,
                   minHeight: 0,
@@ -337,7 +337,7 @@ export default function CardsPage() {
                   justifyContent: 'center',
                   textShadow: '0 1px 3px rgba(0,0,0,0.4)',
                   backgroundColor: 'rgba(0,0,0,0.3)',
-                  padding: 'clamp(8px, 2vw, 16px)',
+                  padding: 'clamp(10px, 3vw, 20px)',
                   borderRadius: '8px',
                   backdropFilter: 'blur(4px)',
                   overflowY: 'auto',
