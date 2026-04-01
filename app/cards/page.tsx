@@ -261,12 +261,12 @@ export default function CardsPage() {
                 zIndex: 1,
                 width: '100%',
                 height: '100%',
-                padding: 'clamp(16px, 4vw, 40px)',
+                padding: 'clamp(10px, 3vw, 40px)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                gap: 'clamp(10px, 2.5vw, 20px)',
+                gap: 'clamp(6px, 1.5vw, 16px)',
                 overflow: 'visible',
                 boxSizing: 'border-box',
               }}>
@@ -313,21 +313,21 @@ export default function CardsPage() {
 
                 {/* Card Title */}
                 <h2 style={{
-                  fontSize: 'clamp(16px, 4vw, 28px)',
+                  fontSize: 'clamp(14px, 3.5vw, 28px)',
                   fontWeight: 700,
-                  marginBottom: 'clamp(8px, 2vw, 20px)',
+                  marginBottom: 'clamp(4px, 1.5vw, 16px)',
                   color: '#ffffff',
                   textShadow: '0 2px 4px rgba(0,0,0,0.5)',
                   textAlign: 'center',
-                  lineHeight: 1.2,
+                  lineHeight: 1.1,
                 }}>
                   {currentCard.title}
                 </h2>
 
                 {/* Card Content */}
                 <div style={{
-                  fontSize: 'clamp(14px, 3.5vw, 18px)',
-                  lineHeight: 1.6,
+                  fontSize: 'clamp(12px, 3vw, 18px)',
+                  lineHeight: 1.5,
                   color: '#ffffff',
                   flex: 1,
                   minHeight: 0,
@@ -337,7 +337,7 @@ export default function CardsPage() {
                   justifyContent: 'center',
                   textShadow: '0 1px 3px rgba(0,0,0,0.4)',
                   backgroundColor: 'rgba(0,0,0,0.3)',
-                  padding: 'clamp(12px, 3vw, 20px)',
+                  padding: 'clamp(8px, 2vw, 16px)',
                   borderRadius: '8px',
                   backdropFilter: 'blur(4px)',
                   overflowY: 'auto',
@@ -347,32 +347,34 @@ export default function CardsPage() {
                   textAlign: 'center',
                 }}>
                   {isFlipped ? (
-                    <div>
+                    <div style={{ width: '100%' }}>
                       <div style={{
-                        fontSize: 'clamp(10px, 2.5vw, 12px)',
+                        fontSize: 'clamp(9px, 2vw, 11px)',
                         color: '#ffffff',
-                        marginBottom: 'clamp(12px, 3vw, 16px)',
+                        marginBottom: 'clamp(6px, 1.5vw, 10px)',
                         textTransform: 'uppercase',
                         fontWeight: 700,
+                        letterSpacing: '0.5px',
                       }}>
                         解答
                       </div>
-                      <div style={{ whiteSpace: 'pre-wrap' }}>
+                      <div style={{ whiteSpace: 'pre-wrap', textAlign: 'left' }}>
                         {currentCard.back}
                       </div>
                     </div>
                   ) : (
-                    <div>
+                    <div style={{ width: '100%' }}>
                       <div style={{
-                        fontSize: 'clamp(10px, 2.5vw, 12px)',
+                        fontSize: 'clamp(9px, 2vw, 11px)',
                         color: '#ffffff',
-                        marginBottom: 'clamp(12px, 3vw, 16px)',
+                        marginBottom: 'clamp(6px, 1.5vw, 10px)',
                         textTransform: 'uppercase',
                         fontWeight: 700,
+                        letterSpacing: '0.5px',
                       }}>
                         問題
                       </div>
-                      <div style={{ whiteSpace: 'pre-wrap' }}>
+                      <div style={{ whiteSpace: 'pre-wrap', textAlign: 'left' }}>
                         {currentCard.front}
                       </div>
                     </div>
