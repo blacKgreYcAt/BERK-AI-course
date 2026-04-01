@@ -261,17 +261,32 @@ export default function CardsPage() {
                 zIndex: 1,
                 width: '100%',
                 height: '100%',
-                padding: 'clamp(20px, 5vw, 40px)',
+                padding: 'clamp(16px, 4vw, 40px)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                gap: 'clamp(12px, 3vw, 20px)',
+                gap: 'clamp(10px, 2.5vw, 20px)',
                 overflow: 'visible',
+                boxSizing: 'border-box',
               }}>
                 {/* Card Header */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  width: '100%',
+                  gap: 'clamp(8px, 2vw, 16px)',
+                  flexWrap: 'wrap',
+                }}>
+                  <span style={{
+                    fontSize: 'clamp(10px, 2.5vw, 12px)',
+                    fontWeight: 700,
+                    color: '#ffffff',
+                    textTransform: 'uppercase',
+                    textShadow: '0 2px 4px rgba(0,0,0,0.5)',
+                    whiteSpace: 'nowrap',
+                  }}>
                     第 {currentCard.week} 週 | 卡牌 {currentCard.number}
                   </span>
                   <button
@@ -283,12 +298,13 @@ export default function CardsPage() {
                       background: completedCards.has(currentCard.id) ? '#ffffff' : 'rgba(255,255,255,0.9)',
                       border: '2px solid #ffffff',
                       color: completedCards.has(currentCard.id) ? '#0071e3' : '#0071e3',
-                      padding: '6px 12px',
+                      padding: 'clamp(4px, 1.5vw, 6px) clamp(8px, 2vw, 12px)',
                       cursor: 'pointer',
                       fontWeight: 600,
-                      fontSize: '12px',
+                      fontSize: 'clamp(10px, 2.5vw, 12px)',
                       borderRadius: '4px',
                       boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                      whiteSpace: 'nowrap',
                     }}
                   >
                     {completedCards.has(currentCard.id) ? '✓ 已完成' : '未完成'}
@@ -332,7 +348,13 @@ export default function CardsPage() {
                 }}>
                   {isFlipped ? (
                     <div>
-                      <div style={{ fontSize: '12px', color: '#ffffff', marginBottom: '16px', textTransform: 'uppercase', fontWeight: 700 }}>
+                      <div style={{
+                        fontSize: 'clamp(10px, 2.5vw, 12px)',
+                        color: '#ffffff',
+                        marginBottom: 'clamp(12px, 3vw, 16px)',
+                        textTransform: 'uppercase',
+                        fontWeight: 700,
+                      }}>
                         解答
                       </div>
                       <div style={{ whiteSpace: 'pre-wrap' }}>
@@ -341,7 +363,13 @@ export default function CardsPage() {
                     </div>
                   ) : (
                     <div>
-                      <div style={{ fontSize: '12px', color: '#ffffff', marginBottom: '16px', textTransform: 'uppercase', fontWeight: 700 }}>
+                      <div style={{
+                        fontSize: 'clamp(10px, 2.5vw, 12px)',
+                        color: '#ffffff',
+                        marginBottom: 'clamp(12px, 3vw, 16px)',
+                        textTransform: 'uppercase',
+                        fontWeight: 700,
+                      }}>
                         問題
                       </div>
                       <div style={{ whiteSpace: 'pre-wrap' }}>
