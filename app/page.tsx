@@ -28,6 +28,7 @@ export default function Home() {
           </div>
           <nav style={{ display: 'flex', gap: '40px' }}>
             <a href="#cases" style={{ color: '#0071e3', fontWeight: 700 }}>課程</a>
+            <Link href="/cards" style={{ color: '#0071e3', fontWeight: 700, textDecoration: 'none' }}>卡牌自學</Link>
             <Link href="/quiz" style={{ color: '#0071e3', fontWeight: 700, textDecoration: 'none' }}>題庫</Link>
           </nav>
         </div>
