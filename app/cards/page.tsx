@@ -316,8 +316,9 @@ export default function CardsPage() {
                   flex: 1,
                   minHeight: 0,
                   display: 'flex',
-                  alignItems: 'flex-start',
-                  justifyContent: 'flex-start',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                   textShadow: '0 1px 3px rgba(0,0,0,0.4)',
                   backgroundColor: 'rgba(0,0,0,0.3)',
                   padding: 'clamp(12px, 3vw, 20px)',
@@ -327,6 +328,7 @@ export default function CardsPage() {
                   overflowX: 'hidden',
                   WebkitOverflowScrolling: 'touch',
                   width: '100%',
+                  textAlign: 'center',
                 }}>
                   {isFlipped ? (
                     <div>
