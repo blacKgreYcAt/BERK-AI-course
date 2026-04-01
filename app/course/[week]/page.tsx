@@ -45,16 +45,63 @@ export default function CoursePage({ params }: { params: Promise<{ week: string 
 
     return (
       <div style={{ background: '#f5f5f7', color: '#000000', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        <div style={{ borderBottom: '2px solid #0071e3', padding: '20px 40px', display: 'flex', justifyContent: 'space-between' }}>
-          <button onClick={() => setSelectedId(null)} style={{ background: 'none', border: 'none', color: '#0071e3', cursor: 'pointer', fontSize: '18px', fontWeight: 600 }}>← 返回</button>
-          <span style={{ color: '#333', fontSize: '18px', fontWeight: 500 }}>第 {week} 週 | {pageIdx + 1}/{total}</span>
+        <div style={{
+        borderBottom: '2px solid #0071e3',
+        padding: 'clamp(12px, 4vw, 20px) clamp(16px, 8vw, 40px)',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: '12px',
+      }}>
+          <button onClick={() => setSelectedId(null)} style={{
+            background: 'none',
+            border: 'none',
+            color: '#0071e3',
+            cursor: 'pointer',
+            fontSize: 'clamp(14px, 4vw, 18px)',
+            fontWeight: 600,
+          }}>← 返回</button>
+          <span style={{
+            color: '#333',
+            fontSize: 'clamp(12px, 4vw, 18px)',
+            fontWeight: 500,
+          }}>第 {week} 週 | {pageIdx + 1}/{total}</span>
         </div>
 
-        <section style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '60px 40px' }}>
-          <div style={{ display: 'flex', gap: '60px', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-            <div style={{ flex: 1 }}>
-              <h1 style={{ fontSize: '56px', color: '#000000', marginBottom: '40px', textAlign: 'center', fontWeight: 900 }}>{page.title}</h1>
-              <div style={{ fontSize: '28px', color: '#000000', lineHeight: 1.8, whiteSpace: 'pre-wrap', maxWidth: '700px', textAlign: 'left', fontWeight: 500 }}>
+        <section style={{
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: 'clamp(30px, 8vw, 60px) clamp(16px, 8vw, 40px)',
+        }}>
+          <div style={{
+            display: 'flex',
+            gap: 'clamp(30px, 8vw, 60px)',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            flexDirection: 'column',
+          }}>
+            <div style={{ flex: 1, width: '100%' }}>
+              <h1 style={{
+                fontSize: 'clamp(28px, 8vw, 56px)',
+                color: '#000000',
+                marginBottom: 'clamp(20px, 5vw, 40px)',
+                textAlign: 'center',
+                fontWeight: 900,
+              }}>{page.title}</h1>
+              <div style={{
+                fontSize: 'clamp(16px, 4vw, 28px)',
+                color: '#000000',
+                lineHeight: 1.8,
+                whiteSpace: 'pre-wrap',
+                maxWidth: '100%',
+                textAlign: 'left',
+                fontWeight: 500,
+              }}>
                 {page.content}
               </div>
             </div>
@@ -70,19 +117,49 @@ export default function CoursePage({ params }: { params: Promise<{ week: string 
           </div>
         </section>
 
-        <div style={{ borderTop: '2px solid #0071e3', padding: '20px 40px', display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{
+          borderTop: '2px solid #0071e3',
+          padding: 'clamp(12px, 4vw, 20px) clamp(16px, 8vw, 40px)',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: 'clamp(12px, 3vw, 20px)',
+          flexWrap: 'wrap',
+        }}>
           <button
             onClick={() => setPageIdx(p => Math.max(0, p - 1))}
             disabled={pageIdx === 0}
-            style={{ padding: '12px 24px', border: '2px solid #0071e3', background: 'transparent', color: '#0071e3', cursor: pageIdx === 0 ? 'not-allowed' : 'pointer', opacity: pageIdx === 0 ? 0.5 : 1, fontSize: '18px', fontWeight: 600 }}
+            style={{
+              padding: 'clamp(10px, 2vw, 12px) clamp(16px, 4vw, 24px)',
+              border: '2px solid #0071e3',
+              background: 'transparent',
+              color: '#0071e3',
+              cursor: pageIdx === 0 ? 'not-allowed' : 'pointer',
+              opacity: pageIdx === 0 ? 0.5 : 1,
+              fontSize: 'clamp(14px, 4vw, 18px)',
+              fontWeight: 600,
+            }}
           >
             ← 上一頁
           </button>
-          <span style={{ fontSize: '18px', fontWeight: 500, color: '#333' }}>{pageIdx + 1}/{total}</span>
+          <span style={{
+            fontSize: 'clamp(14px, 3vw, 18px)',
+            fontWeight: 500,
+            color: '#333',
+          }}>{pageIdx + 1}/{total}</span>
           <button
             onClick={() => setPageIdx(p => Math.min(total - 1, p + 1))}
             disabled={pageIdx === total - 1}
-            style={{ padding: '12px 24px', background: pageIdx === total - 1 ? '#d0d0d0' : '#0071e3', color: pageIdx === total - 1 ? '#666' : '#ffffff', border: 'none', cursor: pageIdx === total - 1 ? 'not-allowed' : 'pointer', opacity: pageIdx === total - 1 ? 0.5 : 1, fontSize: '18px', fontWeight: 600 }}
+            style={{
+              padding: 'clamp(10px, 2vw, 12px) clamp(16px, 4vw, 24px)',
+              background: pageIdx === total - 1 ? '#d0d0d0' : '#0071e3',
+              color: pageIdx === total - 1 ? '#666' : '#ffffff',
+              border: 'none',
+              cursor: pageIdx === total - 1 ? 'not-allowed' : 'pointer',
+              opacity: pageIdx === total - 1 ? 0.5 : 1,
+              fontSize: 'clamp(14px, 4vw, 18px)',
+              fontWeight: 600,
+            }}
           >
             下一頁 →
           </button>

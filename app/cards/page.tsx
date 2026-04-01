@@ -69,16 +69,28 @@ export default function CardsPage() {
   return (
     <div style={{ background: '#f5f5f7', color: '#000000', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       {/* Header */}
-      <div style={{ borderBottom: '2px solid #0071e3', padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div style={{
+        borderBottom: '2px solid #0071e3',
+        padding: 'clamp(12px, 5vw, 20px) clamp(16px, 8vw, 40px)',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: '12px',
+      }}>
         <Link href="/" style={{ background: 'none', border: 'none', color: '#0071e3', cursor: 'pointer', fontSize: '18px', fontWeight: 600, textDecoration: 'none' }}>
           ← 返回首頁
         </Link>
-        <h1 style={{ fontSize: '28px', fontWeight: 700, margin: 0 }}>卡牌自學</h1>
+        <h1 style={{ fontSize: 'clamp(20px, 6vw, 28px)', fontWeight: 700, margin: 0 }}>卡牌自學</h1>
         <div style={{ width: '100px' }}></div>
       </div>
 
       {/* Controls */}
-      <div style={{ padding: '30px 40px', background: '#ffffff', borderBottom: '2px solid #0071e3' }}>
+      <div style={{
+        padding: 'clamp(20px, 5vw, 30px) clamp(16px, 8vw, 40px)',
+        background: '#ffffff',
+        borderBottom: '2px solid #0071e3',
+      }}>
         {/* Search */}
         <input
           type="text"
@@ -91,17 +103,18 @@ export default function CardsPage() {
           }}
           style={{
             width: '100%',
-            padding: '12px 16px',
-            fontSize: '16px',
+            padding: 'clamp(10px, 3vw, 12px) clamp(12px, 4vw, 16px)',
+            fontSize: 'clamp(14px, 4vw, 16px)',
             border: '2px solid #0071e3',
             borderRadius: '8px',
             marginBottom: '20px',
             fontFamily: 'inherit',
+            boxSizing: 'border-box',
           }}
         />
 
         {/* Week Filter */}
-        <div style={{ display: 'flex', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: 'clamp(8px, 2vw, 12px)', marginBottom: '20px', flexWrap: 'wrap' }}>
           <button
             onClick={() => { setSelectedWeek(null); setCurrentCardIdx(0); setIsFlipped(false) }}
             style={{
@@ -146,7 +159,14 @@ export default function CardsPage() {
       </div>
 
       {/* Card Display */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '60px 40px' }}>
+      <div style={{
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 'clamp(30px, 8vw, 60px) clamp(16px, 8vw, 40px)',
+      }}>
         {filteredCards.length === 0 ? (
           <div style={{ textAlign: 'center', color: '#999' }}>
             <p style={{ fontSize: '20px', marginBottom: '20px' }}>找不到相符的卡片</p>
@@ -194,7 +214,7 @@ export default function CardsPage() {
               onClick={() => setIsFlipped(!isFlipped)}
               style={{
                 width: '100%',
-                maxWidth: '600px',
+                maxWidth: 'clamp(300px, 90vw, 600px)',
                 aspectRatio: '1',
                 background: '#ffffff',
                 border: '3px solid #0071e3',

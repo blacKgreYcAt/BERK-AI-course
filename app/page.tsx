@@ -59,8 +59,13 @@ export default function Home() {
         <div className="container">
           <h2>課程設計</h2>
 
-          {/* 4 列佈局 - 每週一列 */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px', marginTop: '60px' }}>
+          {/* 響應式網格 - 桌面 4 列、平板 2 列、手機 1 列 */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '40px',
+            marginTop: '60px',
+          }}>
             {coursesByWeek.map(({ week, courses }) => (
               <div key={week} style={{ display: 'flex', flexDirection: 'column' }}>
                 {/* 週表頭 */}
