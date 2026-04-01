@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gemini 企業協作大師課",
+  title: "大豐貿易集團AI協作課程",
   description: "四週完整課程，掌握 Gemini 六大神器",
 };
 
