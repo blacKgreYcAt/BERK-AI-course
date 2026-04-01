@@ -261,11 +261,13 @@ export default function CardsPage() {
                 zIndex: 1,
                 width: '100%',
                 height: '100%',
-                padding: '40px',
+                padding: 'clamp(20px, 5vw, 40px)',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between',
+                justifyContent: 'flex-start',
                 alignItems: 'center',
+                gap: 'clamp(12px, 3vw, 20px)',
+                overflow: 'hidden',
               }}>
                 {/* Card Header */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
@@ -295,30 +297,33 @@ export default function CardsPage() {
 
                 {/* Card Title */}
                 <h2 style={{
-                  fontSize: '28px',
+                  fontSize: 'clamp(16px, 4vw, 28px)',
                   fontWeight: 700,
-                  marginBottom: '20px',
+                  marginBottom: 'clamp(8px, 2vw, 20px)',
                   color: '#ffffff',
                   textShadow: '0 2px 4px rgba(0,0,0,0.5)',
                   textAlign: 'center',
+                  lineHeight: 1.2,
                 }}>
                   {currentCard.title}
                 </h2>
 
                 {/* Card Content */}
                 <div style={{
-                  fontSize: '18px',
-                  lineHeight: 1.8,
+                  fontSize: 'clamp(14px, 3.5vw, 18px)',
+                  lineHeight: 1.6,
                   color: '#ffffff',
-                  minHeight: '180px',
+                  flex: 1,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   textShadow: '0 1px 3px rgba(0,0,0,0.4)',
                   backgroundColor: 'rgba(0,0,0,0.3)',
-                  padding: '20px',
+                  padding: 'clamp(12px, 3vw, 20px)',
                   borderRadius: '8px',
                   backdropFilter: 'blur(4px)',
+                  overflowY: 'auto',
+                  maxHeight: 'calc(100% - 120px)',
                 }}>
                   {isFlipped ? (
                     <div>
@@ -342,7 +347,13 @@ export default function CardsPage() {
                 </div>
 
                 {/* Flip Indicator */}
-                <div style={{ fontSize: '12px', color: '#ffffff', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
+                <div style={{
+                  fontSize: 'clamp(10px, 2.5vw, 12px)',
+                  color: '#ffffff',
+                  textShadow: '0 2px 4px rgba(0,0,0,0.5)',
+                  marginTop: 'auto',
+                  paddingTop: 'clamp(8px, 2vw, 12px)',
+                }}>
                   {isFlipped ? '點擊翻回' : '點擊翻開'}
                 </div>
               </div>
