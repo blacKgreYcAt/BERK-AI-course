@@ -195,11 +195,10 @@ export default function CardsPage() {
               style={{
                 width: '100%',
                 maxWidth: '600px',
-                aspectRatio: '1.4',
+                aspectRatio: '1',
                 background: '#ffffff',
                 border: '3px solid #0071e3',
                 borderRadius: '16px',
-                padding: '40px',
                 cursor: 'pointer',
                 display: 'flex',
                 flexDirection: 'column',
@@ -209,6 +208,7 @@ export default function CardsPage() {
                 transition: 'all 0.3s ease',
                 boxShadow: '0 4px 6px rgba(0, 174, 239, 0.1)',
                 position: 'relative',
+                overflow: 'hidden',
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLDivElement
@@ -221,70 +221,110 @@ export default function CardsPage() {
                 el.style.boxShadow = '0 4px 6px rgba(0, 174, 239, 0.1)'
               }}
             >
-              {/* Card Header */}
-              <div style={{ position: 'absolute', top: '20px', left: '20px', right: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '12px', fontWeight: 700, color: '#0071e3', textTransform: 'uppercase' }}>
-                  第 {currentCard.week} 週 | 卡牌 {currentCard.number}
-                </span>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    toggleCompleted(currentCard.id)
-                  }}
-                  style={{
-                    background: completedCards.has(currentCard.id) ? '#0071e3' : '#ffffff',
-                    border: '2px solid #0071e3',
-                    color: completedCards.has(currentCard.id) ? '#ffffff' : '#0071e3',
-                    padding: '6px 12px',
-                    cursor: 'pointer',
-                    fontWeight: 600,
-                    fontSize: '12px',
-                    borderRadius: '4px',
-                  }}
-                >
-                  {completedCards.has(currentCard.id) ? '✓ 已完成' : '未完成'}
-                </button>
-              </div>
-
-              {/* Card Title */}
-              <h2 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '30px', marginTop: '20px', color: '#000000' }}>
-                {currentCard.title}
-              </h2>
-
-              {/* Card Content */}
+              {/* Card Image Background */}
+              <img
+                src={`/cards/${currentCard.id}.svg`}
+                alt="card background"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  zIndex: 0,
+                }}
+              />
+              {/* Card Content Overlay */}
               <div style={{
-                fontSize: '18px',
-                lineHeight: 1.8,
-                color: '#000000',
-                minHeight: '200px',
+                position: 'relative',
+                zIndex: 1,
+                width: '100%',
+                height: '100%',
+                padding: '40px',
                 display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
                 alignItems: 'center',
-                justifyContent: 'center',
               }}>
-                {isFlipped ? (
-                  <div>
-                    <div style={{ fontSize: '12px', color: '#999', marginBottom: '16px', textTransform: 'uppercase', fontWeight: 700 }}>
-                      解答
-                    </div>
-                    <div style={{ whiteSpace: 'pre-wrap' }}>
-                      {currentCard.back}
-                    </div>
-                  </div>
-                ) : (
-                  <div>
-                    <div style={{ fontSize: '12px', color: '#999', marginBottom: '16px', textTransform: 'uppercase', fontWeight: 700 }}>
-                      問題
-                    </div>
-                    <div style={{ whiteSpace: 'pre-wrap' }}>
-                      {currentCard.front}
-                    </div>
-                  </div>
-                )}
-              </div>
+                {/* Card Header */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
+                    第 {currentCard.week} 週 | 卡牌 {currentCard.number}
+                  </span>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      toggleCompleted(currentCard.id)
+                    }}
+                    style={{
+                      background: completedCards.has(currentCard.id) ? '#ffffff' : 'rgba(255,255,255,0.9)',
+                      border: '2px solid #ffffff',
+                      color: completedCards.has(currentCard.id) ? '#0071e3' : '#0071e3',
+                      padding: '6px 12px',
+                      cursor: 'pointer',
+                      fontWeight: 600,
+                      fontSize: '12px',
+                      borderRadius: '4px',
+                      boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                    }}
+                  >
+                    {completedCards.has(currentCard.id) ? '✓ 已完成' : '未完成'}
+                  </button>
+                </div>
 
-              {/* Flip Indicator */}
-              <div style={{ position: 'absolute', bottom: '20px', right: '20px', fontSize: '12px', color: '#999' }}>
-                {isFlipped ? '點擊翻回' : '點擊翻開'}
+                {/* Card Title */}
+                <h2 style={{
+                  fontSize: '28px',
+                  fontWeight: 700,
+                  marginBottom: '20px',
+                  color: '#ffffff',
+                  textShadow: '0 2px 4px rgba(0,0,0,0.5)',
+                  textAlign: 'center',
+                }}>
+                  {currentCard.title}
+                </h2>
+
+                {/* Card Content */}
+                <div style={{
+                  fontSize: '18px',
+                  lineHeight: 1.8,
+                  color: '#ffffff',
+                  minHeight: '180px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textShadow: '0 1px 3px rgba(0,0,0,0.4)',
+                  backgroundColor: 'rgba(0,0,0,0.3)',
+                  padding: '20px',
+                  borderRadius: '8px',
+                  backdropFilter: 'blur(4px)',
+                }}>
+                  {isFlipped ? (
+                    <div>
+                      <div style={{ fontSize: '12px', color: '#ffffff', marginBottom: '16px', textTransform: 'uppercase', fontWeight: 700 }}>
+                        解答
+                      </div>
+                      <div style={{ whiteSpace: 'pre-wrap' }}>
+                        {currentCard.back}
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <div style={{ fontSize: '12px', color: '#ffffff', marginBottom: '16px', textTransform: 'uppercase', fontWeight: 700 }}>
+                        問題
+                      </div>
+                      <div style={{ whiteSpace: 'pre-wrap' }}>
+                        {currentCard.front}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Flip Indicator */}
+                <div style={{ fontSize: '12px', color: '#ffffff', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
+                  {isFlipped ? '點擊翻回' : '點擊翻開'}
+                </div>
               </div>
             </div>
 
