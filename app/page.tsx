@@ -43,9 +43,12 @@ export default function Home() {
               <span className="hero-accent">AI 企業協作課程</span>
             </h1>
             <p>
-              四週密集課程，掌握 Gemini 六大神器。
+              四週實體密集課程，掌握 Gemini 六大神器。
               <br />
               從傳統辦公流程到 AI 驅動決策，完整蛻變。
+              <br />
+              <br />
+              各地分公司同仁，亦可透過卡牌自學功能，進行無界限的網路學習，參與AI課程。
             </p>
           </div>
         </div>
