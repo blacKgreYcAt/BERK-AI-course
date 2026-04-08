@@ -129,7 +129,7 @@ export default function CardsPage() {
           >
             全部 ({cardsData.length})
           </button>
-          {[1, 2, 3, 4].map(week => {
+          {[0, 1, 2, 3, 4].map(week => {
             const weekCount = cardsData.filter(c => c.week === week).length
             return (
               <button
@@ -145,7 +145,7 @@ export default function CardsPage() {
                   borderRadius: '6px',
                 }}
               >
-                第 {week} 週 ({weekCount})
+                {week === 0 ? '課前準備' : `第 ${week} 週`} ({weekCount})
               </button>
             )
           })}
