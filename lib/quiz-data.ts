@@ -1442,3 +1442,24 @@ export const quizData: QuizQuestion[] = [
     explanation: "這門課的核心就是『人 + AI 的最佳協作方式』。AI 是工具，人的判斷力才是未來的價值所在。"
   }
 ];
+
+/**
+ * 根據章節 ID 獲取對應的問題組
+ * 用於舊版 quiz 頁面的相容性
+ */
+export function getQuestionsBySection(sectionId: number): QuizQuestion[] {
+  const sectionMap: { [key: number]: { min: number; max: number } } = {
+    1: { min: 1, max: 10 },      // 基礎層第一部分
+    2: { min: 11, max: 20 },     // 基礎層第二部分
+    3: { min: 21, max: 30 },     // 應用層第一部分
+    4: { min: 31, max: 40 },     // 應用層第二部分
+    5: { min: 41, max: 80 }      // 應用層第三-四部分
+  };
+
+  const range = sectionMap[sectionId];
+  if (!range) {
+    return [];
+  }
+
+  return quizData.filter(q => q.id >= range.min && q.id <= range.max);
+}
