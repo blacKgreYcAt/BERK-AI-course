@@ -24,7 +24,7 @@ export function generateCertificateNumber(): string {
   let sequence = parseInt(localStorage.getItem(todayKey) || '0', 10) + 1;
   localStorage.setItem(todayKey, String(sequence));
 
-  return `TFG-GEMINI-${dateStr}-${String(sequence).padStart(4, '0')}`;
+  return `BERK-GEMINI-${dateStr}-${String(sequence).padStart(4, '0')}`;
 }
 
 /**
@@ -116,7 +116,7 @@ export async function generateCertificateCanvas(
     // 5. 繪製副標題
     ctx.font = '50px -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei"';
     ctx.fillStyle = '#666666';
-    ctx.fillText('Gemini 企業協作課程結業証書', canvas.width / 2, 380);
+    ctx.fillText('Gemini 課程結業証書', canvas.width / 2, 380);
 
     // 6. 繪製分隔線
     ctx.strokeStyle = '#d4af37';
@@ -144,7 +144,7 @@ export async function generateCertificateCanvas(
     // 完成文本
     ctx.font = '50px -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei"';
     ctx.fillStyle = '#333333';
-    ctx.fillText('已完成「Gemini 全方位實戰大師課」的所有課程', canvas.width / 2, contentStartY + lineHeight * 2);
+    ctx.fillText('已完成「Gemini 企業協作課程」的所有課程', canvas.width / 2, contentStartY + lineHeight * 2);
 
     // 日期和編號
     ctx.font = '40px -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei"';
