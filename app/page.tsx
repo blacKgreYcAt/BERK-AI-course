@@ -12,6 +12,9 @@ export default function Home() {
     courses: courseData.filter(c => c.week === week)
   }))
 
+  // 進階應用課程
+  const advancedCourses = courseData.filter(c => c.week === 99)
+
   return (
     <div style={{ background: '#f5f5f7', color: '#000000' }}>
       {/* Header */}
@@ -135,6 +138,85 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* 進階應用 Section */}
+      {advancedCourses.length > 0 && (
+        <section style={{ background: '#ffffff', padding: '80px 40px', borderTop: '3px dashed #d0d0d0', marginTop: '80px' }}>
+          <div className="container">
+            <div style={{
+              background: 'linear-gradient(135deg, #6d28d9, #d946ef)',
+              padding: '40px',
+              borderRadius: '30px',
+              color: 'white',
+              marginBottom: '60px',
+              textAlign: 'center'
+            }}>
+              <h2 style={{ margin: '0 0 15px 0', fontSize: '40px', fontWeight: 900 }}>
+                ⭐ 進階使用 Tips
+              </h2>
+              <p style={{ margin: '0', fontSize: '18px', opacity: 0.95, lineHeight: 1.6 }}>
+                深入掌握 Gemini 高階功能，打造專屬 AI 助手<br />
+                提升工作效率，成為 AI 時代的領航員
+              </p>
+            </div>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '40px',
+            }}>
+              {advancedCourses.map((course) => (
+                <Link key={course.id} href={`/course/99`}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      padding: '25px',
+                      background: '#ffffff',
+                      border: '2px solid #9333ea',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                      minHeight: '200px',
+                      borderRadius: '15px',
+                    }}
+                    onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
+                      const el = e.currentTarget as HTMLDivElement;
+                      el.style.transform = 'translate(-5px, -5px)';
+                      el.style.boxShadow = '5px 5px 0 #9333ea';
+                    }}
+                    onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
+                      const el = e.currentTarget as HTMLDivElement;
+                      el.style.transform = 'translate(0, 0)';
+                      el.style.boxShadow = 'none';
+                    }}
+                  >
+                    <div>
+                      <div style={{ fontSize: '14px', textTransform: 'uppercase', color: '#9333ea', marginBottom: '12px', letterSpacing: '1px', fontWeight: 700 }}>
+                        進階 {course.module}
+                      </div>
+                      <h4 style={{ fontSize: '22px', fontWeight: 900, marginBottom: '12px', color: '#000000', lineHeight: 1.3 }}>
+                        {course.title}
+                      </h4>
+                      <p style={{ fontSize: '16px', color: '#333', marginBottom: '0', lineHeight: 1.4 }}>
+                        {course.description}
+                      </p>
+                    </div>
+                    <div style={{ marginTop: '15px', paddingTop: '15px', borderTop: '1px solid #d0d0d0' }}>
+                      <p style={{ fontSize: '14px', color: '#666', margin: '0 0 8px 0' }}>
+                        ⏱️ {course.duration_minutes} 分鐘
+                      </p>
+                      <p style={{ fontSize: '14px', color: '#9333ea', fontWeight: 700, margin: '0' }}>
+                        📑 進階應用 →
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Footer */}
       <footer>
