@@ -160,7 +160,7 @@ export async function downloadCertificateAsPDF(
   fileName: string
 ) {
   try {
-    const { jsPDF } = await import('jspdf');
+    const { default: jsPDF } = await import('jspdf');
 
     const imgData = canvas.toDataURL('image/png', 1.0);
 
