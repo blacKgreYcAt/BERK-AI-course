@@ -66,7 +66,7 @@ export default function CoursePage({ params }: { params: Promise<{ week: string 
             color: '#333',
             fontSize: 'clamp(12px, 4vw, 18px)',
             fontWeight: 500,
-          }}>第 {week} 週 | {pageIdx + 1}/{total}</span>
+          }}>{week === 0 ? '課前準備' : `第 ${week} 週`} | {pageIdx + 1}/{total}</span>
         </div>
 
         <section style={{
@@ -189,7 +189,7 @@ export default function CoursePage({ params }: { params: Promise<{ week: string 
   return (
     <div style={{ padding: '40px', background: '#f5f5f7', color: '#000000', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Link href="/">← 返回首頁</Link>
-      <h1 style={{ fontSize: 'clamp(32px, 8vw, 44px)', marginTop: '40px', marginBottom: '40px' }}>第 {week} 週 ({courses.length})</h1>
+      <h1 style={{ fontSize: 'clamp(32px, 8vw, 44px)', marginTop: '40px', marginBottom: '40px' }}>{week === 0 ? '課前準備' : `第 ${week} 週`} ({courses.length})</h1>
 
       <div style={{ flex: 1 }}>
         {courses.map(c => (
