@@ -6,11 +6,12 @@ import { quizData, getQuestionsBySection } from '@/lib/quiz-data';
 import type { QuizQuestion } from '@/lib/quiz-data';
 
 const SECTIONS = [
-  { id: 1, name: '第一週課程 - 六大神器總覽', range: '問題 1-10' },
-  { id: 2, name: '第二週課程 - Prompt 溝通術', range: '問題 11-20' },
-  { id: 3, name: '第三週課程 - 數據處理工具', range: '問題 21-30' },
-  { id: 4, name: '第四週課程 - Canvas、建立影片、創作音樂', range: '問題 31-40' },
-  { id: 5, name: '綜合應用情景題', range: '問題 41-60' }
+  { id: 1, name: '基礎認識 - Gemini 功能與訂閱', range: '問題 1-20' },
+  { id: 2, name: '文本應用 - 內容生成、研究、分析', range: '問題 21-35' },
+  { id: 3, name: '圖像應用 - 圖像分析、生成、設計', range: '問題 36-50' },
+  { id: 4, name: '視頻與音頻 - Veo、音樂、語音', range: '問題 51-65' },
+  { id: 5, name: '語音應用 - Live、實時對話、語音分析', range: '問題 66-80' },
+  { id: 6, name: '進階應用 - 倫理、決策、企業應用', range: '問題 81-100' }
 ];
 
 export default function QuizPage() {
@@ -106,11 +107,13 @@ export default function QuizPage() {
         <div style={styles.infoBox}>
           <h3 style={styles.infoTitle}>📝 使用說明</h3>
           <ul style={styles.infoList}>
-            <li>每個章節包含 10 道題目</li>
-            <li>綜合應用章節包含 20 道題目</li>
-            <li>選擇您的答案後，系統會立即顯示正確答案</li>
-            <li>完成所有題目後，您將獲得成績評級</li>
-            <li>可隨時返回重新測試不同章節</li>
+            <li>共 100 題題庫，分為 6 個章節</li>
+            <li>基礎認識章節包含 20 道題目</li>
+            <li>各應用章節（文本、圖像、視頻、語音）各包含 15 道題目</li>
+            <li>進階應用章節包含 20 道題目</li>
+            <li>選擇您的答案後，系統會立即顯示正確答案和詳細解析</li>
+            <li>完成每個章節後，您將獲得成績評級</li>
+            <li>可隨時返回重新測試不同章節，挑戰自己的學習成果</li>
           </ul>
         </div>
       </div>

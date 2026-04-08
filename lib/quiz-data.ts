@@ -1449,11 +1449,12 @@ export const quizData: QuizQuestion[] = [
  */
 export function getQuestionsBySection(sectionId: number): QuizQuestion[] {
   const sectionMap: { [key: number]: { min: number; max: number } } = {
-    1: { min: 1, max: 10 },      // 基礎層第一部分
-    2: { min: 11, max: 20 },     // 基礎層第二部分
-    3: { min: 21, max: 30 },     // 應用層第一部分
-    4: { min: 31, max: 40 },     // 應用層第二部分
-    5: { min: 41, max: 80 }      // 應用層第三-四部分
+    1: { min: 1, max: 20 },      // 基礎認識 (20題)
+    2: { min: 21, max: 35 },     // 文本應用 (15題)
+    3: { min: 36, max: 50 },     // 圖像應用 (15題)
+    4: { min: 51, max: 65 },     // 視頻與音頻 (15題)
+    5: { min: 66, max: 80 },     // 語音應用 (15題)
+    6: { min: 81, max: 100 }     // 進階應用 (20題)
   };
 
   const range = sectionMap[sectionId];
