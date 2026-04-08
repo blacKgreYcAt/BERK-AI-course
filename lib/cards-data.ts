@@ -9,6 +9,71 @@ export interface Card {
 }
 
 export const cardsData: Card[] = [
+  // Week 0 - Gemini 註冊與跨裝置上手
+  {
+    id: "0-1",
+    week: 0,
+    number: 1,
+    title: "Google 帳號準備",
+    front: "使用 Gemini 的第一步是什麼？",
+    back: "必須擁有 Google 帳號\n\n個人帳號（@gmail.com）：\n直接前往 gemini.google.com 即可使用\n\n企業帳號（Google Workspace）：\n需由組織管理員開啟「Gemini」權限才能使用\n\n✓ 確保你的帳號已準備好",
+    imagePrompt: "科技風格：Google logo 和一個安全的帳號圖示，顯示個人帳號和企業帳號的分叉路徑，藍色科技感背景"
+  },
+  {
+    id: "0-2",
+    week: 0,
+    number: 2,
+    title: "電腦網頁版：完整功能",
+    front: "為什麼要用電腦網頁版？",
+    back: "網頁版是功能最完整、最強大的介面\n\n官方網址：gemini.google.com\n\n關鍵優勢：\n✓ 支援匯出至 Google 文件\n✓ 可在 Gmail 中草擬\n✓ 最適合處理複雜指令（Prompts）\n✓ 全螢幕編輯空間\n\n最推薦主管使用的版本",
+    imagePrompt: "科技風格：電腦螢幕顯示 Gemini 網頁介面，畫面明亮清爽，強調功能豐富，有藍色高亮的工具欄"
+  },
+  {
+    id: "0-3",
+    week: 0,
+    number: 3,
+    title: "Android 設備：語音喚醒",
+    front: "在 Android 手機上如何快速喚醒 Gemini？",
+    back: "方式一：長按電源鍵\n方式二：說出「Hey Google」\n方式三：開啟 Google Gemini App\n\n特色功能：\n✓ 可看見手機螢幕內容\n✓ 針對螢幕資訊進行即時分析\n✓ 完全取代原有的 Google 助理\n\n→ 最便捷的行動使用體驗",
+    imagePrompt: "科技風格：Android 手機顯示 Gemini 介面，語音波形動畫效果，手指長按電源鍵的示意，科技藍色和綠色配色"
+  },
+  {
+    id: "0-4",
+    week: 0,
+    number: 4,
+    title: "iOS 設備：Google App 整合",
+    front: "iPhone 用戶如何使用 Gemini？",
+    back: "iOS 上 Gemini 整合在 Google App 內\n\n使用步驟：\n1. 下載或更新 Google App（App Store）\n2. 開啟 Google App\n3. 點擊頂部的 Gemini 切換開關\n\n→ 無需下載獨立 App\n→ 與 Google 生態系統無縫整合",
+    imagePrompt: "科技風格：iPhone 螢幕顯示 Google App 和 Gemini 切換開關，Apple 風格的簡潔設計，金色和藍色配色"
+  },
+  {
+    id: "0-5",
+    week: 0,
+    number: 5,
+    title: "跨平台共通功能",
+    front: "Gemini 在各平台都有的核心功能有哪些？",
+    back: "對話框：輸入文字指令的地方\n\n相機/圖片：視覺辨識（拍冰箱問食譜）\n\n麥克風：語音輸入（省去打字時間）\n\nGemini Live：流暢的語音對話\n\n歷史紀錄：自動保存，隨時接續工作\n\n→ 無論用哪個版本，這些功能都有",
+    imagePrompt: "科技風格：多個平台（手機、平板、電腦）的螢幕並排，共同的功能圖示在中間，藍色連接線展示跨平台同步"
+  },
+  {
+    id: "0-6",
+    week: 0,
+    number: 6,
+    title: "Gemini 費用與年齡限制",
+    front: "使用 Gemini 需要付費嗎？有年齡限制嗎？",
+    back: "費用：\n✓ 基本版完全免費\n✓ 進階功能可訂閱 Google One AI Premium\n\n年齡限制：\n✓ 基本使用：年滿 13 歲\n✓ 部分進階功能：年滿 18 歲\n\n→ 絕大多數主管不需付費",
+    imagePrompt: "科技風格：錢幣圖示和年齡符號，綠色勾選標記顯示免費，展現成本效益，現代扁平設計"
+  },
+  {
+    id: "0-7",
+    week: 0,
+    number: 7,
+    title: "Gemini Live：實時對話",
+    front: "什麼是 Gemini Live？",
+    back: "Gemini Live 是實時、流暢的語音對話功能\n\n特點：\n✓ 像與真人聊天一樣\n✓ 可即時互動和討論\n✓ 自然對話流程\n✓ 適合深度交流和思考\n\n使用場景：\n• 策略討論和頭腦風暴\n• 複雜問題的深入探討\n• 學習和教練式輔導",
+    imagePrompt: "科技風格：語音波形和對話氣泡，藍色動態效果顯示實時互動，像是兩個人在談話的虛像"
+  },
+
   // Week 1
   {
     id: "1-1",
