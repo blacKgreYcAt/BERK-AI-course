@@ -634,7 +634,7 @@ export const courseData: Course[] = [
   {
     id: "adv-5-1",
     week: 9,
-    module: 1,
+    module: 5,
     title: "Gemini 3.1 Pro 實戰工坊",
     description: "Deep Research 完整工作流、Veo 3.1 高級應用、進階模型的成本效益分析",
     pages: [
@@ -678,7 +678,7 @@ export const courseData: Course[] = [
   {
     id: "adv-6-1",
     week: 10,
-    module: 1,
+    module: 6,
     title: "AI 時代的決策管理",
     description: "基於 AI 洞察做決策、KPI 設定、失敗案例分析、團隊領導新模式",
     pages: [
