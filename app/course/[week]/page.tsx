@@ -211,9 +211,9 @@ export default function CoursePage() {
           marginTop: '40px',
         }}>
           <p style={{ margin: 0, lineHeight: 1.6 }}>
-            © 2026 BERK AI 空間 • Gemini 企業協作課程 •{' '}
-            <a href="mailto:contact@berkaispace.com" style={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600 }}>
-              與我們聯繫
+            © 2026 BERK 的 AI 空間 • Gemini 課程 •{' '}
+            <a href="mailto:52.emperor-widest@icloud.com" style={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600 }}>
+              聯繫我們
             </a>
           </p>
         </div>
@@ -251,9 +251,9 @@ export default function CoursePage() {
         marginTop: '40px',
       }}>
         <p style={{ margin: 0, lineHeight: 1.6 }}>
-          © 2026 BERK AI 空間 • Gemini 企業協作課程 •{' '}
-          <a href="mailto:contact@berkaispace.com" style={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600 }}>
-            與我們聯繫
+          © 2026 BERK 的 AI 空間 • Gemini 課程 •{' '}
+          <a href="mailto:52.emperor-widest@icloud.com" style={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600 }}>
+            聯繫我們
           </a>
         </p>
       </div>

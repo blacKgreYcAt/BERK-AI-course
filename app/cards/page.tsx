@@ -454,9 +454,9 @@ export default function CardsPage() {
       <div style={{ borderTop: '2px solid #0071e3', padding: 'clamp(16px, 5vw, 20px) clamp(16px, 8vw, 40px)', textAlign: 'center', color: '#666', fontSize: 'clamp(12px, 3vw, 14px)' }}>
         <p style={{ margin: '0 0 12px 0' }}>💡 提示：點擊卡片翻開、使用 ← → 箭頭導覽或搜尋特定內容</p>
         <p style={{ margin: 0, lineHeight: 1.6 }}>
-          © 2026 BERK AI 空間 • Gemini 企業協作課程 •{' '}
-          <a href="mailto:contact@berkaispace.com" style={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600 }}>
-            與我們聯繫
+          © 2026 BERK 的 AI 空間 • Gemini 課程 •{' '}
+          <a href="mailto:52.emperor-widest@icloud.com" style={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600 }}>
+            聯繫我們
           </a>
         </p>
       </div>
