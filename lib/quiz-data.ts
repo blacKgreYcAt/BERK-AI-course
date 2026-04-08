@@ -14,9 +14,151 @@ export interface QuizQuestion {
 }
 
 export const quizData: QuizQuestion[] = [
-  // Week 1 - 六大神器總覽 (Q1-Q10)
+  // Week 0 - Gemini 註冊與跨裝置上手 (Q1-Q10)
   {
     id: 1,
+    section: 1,
+    week: 0,
+    question: "使用 Gemini 的前提條件是什麼？",
+    options: [
+      { label: "A", text: "必須購買 Google Pixel 手機" },
+      { label: "B", text: "必須擁有一個 Google 帳號 (@gmail.com) 或 Google Workspace 帳號" },
+      { label: "C", text: "必須使用 Windows 系統" },
+      { label: "D", text: "必須支付月費" }
+    ],
+    correctAnswer: "B",
+    explanation: "Gemini 的基本前提是擁有 Google 帳號（個人帳號）或 Google Workspace 帳號（企業帳號需由管理員開啟權限）。"
+  },
+  {
+    id: 2,
+    section: 1,
+    week: 0,
+    question: "企業員工如果想在公司 Google Workspace 帳號上使用 Gemini，應該如何處理？",
+    options: [
+      { label: "A", text: "直接使用即可，無需任何設置" },
+      { label: "B", text: "需由組織管理員後台開啟「Gemini」權限才能登入" },
+      { label: "C", text: "只能使用個人 Gmail 帳號" },
+      { label: "D", text: "無法在企業帳號上使用" }
+    ],
+    correctAnswer: "B",
+    explanation: "Google Workspace 帳號需由組織管理員在後台開啟「Gemini」權限，員工才能使用此功能。"
+  },
+  {
+    id: 3,
+    section: 1,
+    week: 0,
+    question: "關於電腦網頁版 Gemini，下列敘述何者正確？",
+    options: [
+      { label: "A", text: "網頁版功能有限，只能進行簡單對話" },
+      { label: "B", text: "網頁版是功能最完整、最適合處理複雜指令的介面" },
+      { label: "C", text: "網頁版只支援 Firefox 瀏覽器" },
+      { label: "D", text: "網頁版無法匯出文件" }
+    ],
+    correctAnswer: "B",
+    explanation: "電腦網頁版 (gemini.google.com) 是功能最完整的介面，支援匯出至 Google 文件、在 Gmail 中草擬等高級功能。"
+  },
+  {
+    id: 4,
+    section: 1,
+    week: 0,
+    question: "Android 使用者如果想要喚醒 Gemini，有哪些方式？",
+    options: [
+      { label: "A", text: "只能透過 App 開啟" },
+      { label: "B", text: "長按電源鍵或說出「Hey Google」來喚醒它，以及透過 Google Gemini App 開啟" },
+      { label: "C", text: "不能語音喚醒" },
+      { label: "D", text: "只能說出語音指令" }
+    ],
+    correctAnswer: "B",
+    explanation: "Android 使用者可以透過長按電源鍵、說出「Hey Google」或直接開啟 Google Gemini App 來使用 Gemini。"
+  },
+  {
+    id: 5,
+    section: 1,
+    week: 0,
+    question: "在 iOS (iPhone/iPad) 上使用 Gemini 時，應該如何操作？",
+    options: [
+      { label: "A", text: "iOS 不支援 Gemini" },
+      { label: "B", text: "需要下載獨立的 Gemini App，然後長按主按鈕" },
+      { label: "C", text: "開啟 Google App，點擊頂部的 Gemini 切換開關即可進入" },
+      { label: "D", text: "iOS 只能透過網頁版使用" }
+    ],
+    correctAnswer: "C",
+    explanation: "在 iOS 上，Gemini 整合在 Google App 中，只需開啟 Google App 並點擊頂部的 Gemini 切換開關即可使用。"
+  },
+  {
+    id: 6,
+    section: 1,
+    week: 0,
+    question: "以下哪項是 Gemini 在 Android 上特有的功能？",
+    options: [
+      { label: "A", text: "語音對話" },
+      { label: "B", text: "能「看見」螢幕內容，並針對螢幕上的資訊進行即時分析" },
+      { label: "C", text: "文字輸入" },
+      { label: "D", text: "圖片上傳" }
+    ],
+    correctAnswer: "B",
+    explanation: "Gemini 在 Android 上可以存取螢幕內容，針對螢幕上顯示的任何資訊進行即時分析，這是 Android 版本的特色優勢。"
+  },
+  {
+    id: 7,
+    section: 1,
+    week: 0,
+    question: "使用 Gemini 需要付費嗎？",
+    options: [
+      { label: "A", text: "所有功能都需要付費" },
+      { label: "B", text: "基本版完全免費，進階功能可選擇訂閱 Google One AI Premium" },
+      { label: "C", text: "網頁版免費，App 版需付費" },
+      { label: "D", text: "需要支付初次激活費" }
+    ],
+    correctAnswer: "B",
+    explanation: "Gemini 基本版免費可用。如果需要最強大的模型（Gemini 1.5 Pro）及更大的儲存空間，可選擇訂閱 Google One AI Premium。"
+  },
+  {
+    id: 8,
+    section: 1,
+    week: 0,
+    question: "使用 Gemini 的使用者有年齡限制嗎？",
+    options: [
+      { label: "A", text: "沒有年齡限制" },
+      { label: "B", text: "必須年滿 18 歲" },
+      { label: "C", text: "必須年滿 13 歲（或所在國家的法定年齡），部分進階功能需年滿 18 歲" },
+      { label: "D", text: "兒童可以自由使用" }
+    ],
+    correctAnswer: "C",
+    explanation: "使用 Gemini 的使用者必須年滿 13 歲（或所在國家的法定年齡），部分進階功能則需年滿 18 歲。"
+  },
+  {
+    id: 9,
+    section: 1,
+    week: 0,
+    question: "Gemini Live 功能的主要特色是什麼？",
+    options: [
+      { label: "A", text: "只能進行文字對話" },
+      { label: "B", text: "進行即時、流暢的語音對話，類似真人聊天" },
+      { label: "C", text: "只能在網頁版使用" },
+      { label: "D", text: "無法進行對話" }
+    ],
+    correctAnswer: "B",
+    explanation: "Gemini Live 提供即時、流暢的語音對話體驗，讓使用者能像與真人聊天一樣與 AI 互動。"
+  },
+  {
+    id: 10,
+    section: 1,
+    week: 0,
+    question: "使用 Gemini 時，左側側邊欄的「歷史紀錄」有什麼作用？",
+    options: [
+      { label: "A", text: "沒有實際作用" },
+      { label: "B", text: "記錄過往的對話，方便隨時回溯和繼續之前的工作" },
+      { label: "C", text: "只能刪除舊對話" },
+      { label: "D", text: "無法訪問過往對話" }
+    ],
+    correctAnswer: "B",
+    explanation: "歷史紀錄會自動儲存你的所有對話，方便隨時回溯和繼續之前的工作，是提高工作連貫性的重要功能。"
+  },
+
+  // Week 1 - 六大神器總覽 (Q11-Q20)
+  {
+    id: 11,
     section: 1,
     week: 1,
     question: "當主管需要針對一個完全陌生的市場進行「多層次、跨網頁」的深度情報收集時，應優先使用哪項功能？",
@@ -30,7 +172,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "Deep Research (深度研究) 能進行多層次、跨網頁的深度情報收集，是面對完全陌生市場時的最佳選擇。"
   },
   {
-    id: 2,
+    id: 12,
     section: 1,
     week: 1,
     question: "關於「Canvas (畫布模式)」，下列敘述何者正確？",
@@ -44,7 +186,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "Canvas 是一個獨立的文書編輯空間，支援局部修改，可用於精準潤飾文件。"
   },
   {
-    id: 3,
+    id: 13,
     section: 1,
     week: 1,
     question: "在課程中提到，「建立影片 (Veo)」功能最需要注意的事項是什麼？",
@@ -58,7 +200,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "建立影片功能的使用配額每天都有限制，是使用時最需要注意的事項。"
   },
   {
-    id: 4,
+    id: 14,
     section: 1,
     week: 1,
     question: "如果主管想要練習與「抗拒變革的員工」進行溝通演練，最適合使用哪項功能來引導自己思考？",
@@ -72,7 +214,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "引導式學習透過提問引導學習，最適合用於溝通演練和思維培養。"
   },
   {
-    id: 5,
+    id: 15,
     section: 1,
     week: 1,
     question: "關於「創作音樂 (Lyria 3)」，它的主要用途為何？",
@@ -86,7 +228,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "Lyria 3 能根據文字描述生成專屬的無版權背景配樂，適合用於簡報和多媒體製作。"
   },
   {
-    id: 6,
+    id: 16,
     section: 1,
     week: 1,
     question: "下列哪一個工具最適合用來「精準潤飾」一份已經寫好的公關聲明稿？",
@@ -100,7 +242,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "Canvas 提供獨立的文書編輯空間，支援局部修改，最適合精準潤飾已完成的文件。"
   },
   {
-    id: 7,
+    id: 17,
     section: 1,
     week: 1,
     question: "在 Gemini 的工具列中，哪一個工具強調「不直接給答案，而是透過提問引導你學習」？",
@@ -114,7 +256,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "引導式學習強調蘇格拉底式的教學方法，透過提問引導學習者思考，而非直接給答案。"
   },
   {
-    id: 8,
+    id: 18,
     section: 1,
     week: 1,
     question: "課程中提到的「多模態辦公」思維，主要是指什麼？",
@@ -128,7 +270,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "多模態辦公是指結合文字、圖像、影音等多種形式與 AI 協作，充分利用 Gemini 的多種功能。"
   },
   {
-    id: 9,
+    id: 19,
     section: 1,
     week: 1,
     question: "「建立圖像」功能所使用的底層模型名稱為何？",
@@ -142,7 +284,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "建立圖像使用 Nano Banana 2 作為底層模型，能快速生成高品質的圖像。"
   },
   {
-    id: 10,
+    id: 20,
     section: 1,
     week: 1,
     question: "主管在第一週課程中學到的「核心觀念」是什麼？",
@@ -158,7 +300,7 @@ export const quizData: QuizQuestion[] = [
 
   // Week 2 - Prompt 溝通術 (Q11-Q20)
   {
-    id: 11,
+    id: 21,
     section: 2,
     week: 2,
     question: "所謂的 \"Prompt\" (提示詞)，在主管的日常工作中可以理解為什麼？",
@@ -172,7 +314,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "Prompt 就是交辦任務的指令，主管可以像交辦員工一樣交辦 AI。"
   },
   {
-    id: 12,
+    id: 22,
     section: 2,
     week: 2,
     question: "為什麼 AI 有時候會給出過於官腔或不切實際的答案？",
@@ -186,7 +328,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "AI 的輸出品質取決於 Prompt 的清晰度，背景資訊不足會導致不切實際的答案。"
   },
   {
-    id: 13,
+    id: 23,
     section: 2,
     week: 2,
     question: "「黃金 Prompt 公式」中，【角色 (Role)】的功用是什麼？",
@@ -200,7 +342,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "角色定義 AI 應該扮演的專業身分與應採用的語氣，直接影響輸出品質。"
   },
   {
-    id: 14,
+    id: 24,
     section: 2,
     week: 2,
     question: "在撰寫指令時，【背景 (Context)】應該包含哪些資訊？",
@@ -214,7 +356,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "背景應包含前因後果、讀者對象與限制條件，讓 AI 完全理解工作的上下文。"
   },
   {
-    id: 15,
+    id: 25,
     section: 2,
     week: 2,
     question: "若要讓 AI 生成一個「表格」，這屬於黃金公式中的哪一個部分？",
@@ -228,7 +370,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "表格是輸出的格式要求，屬於 Prompt 公式中的格式 (Format) 部分。"
   },
   {
-    id: 16,
+    id: 26,
     section: 2,
     week: 2,
     question: "「黃金 Prompt 公式」的完整結構包含哪五個要素？",
@@ -242,7 +384,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "黃金 Prompt 公式包含：角色、任務、背景、格式、範例，缺一不可以達到最佳效果。"
   },
   {
-    id: 17,
+    id: 27,
     section: 2,
     week: 2,
     question: "在 Prompt 中加入「範例」的目的是什麼？",
@@ -256,7 +398,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "範例展示理想輸出的具體形式，大幅降低 AI 的理解門檻，提高結果精準度。"
   },
   {
-    id: 18,
+    id: 28,
     section: 2,
     week: 2,
     question: "主管在撰寫 Prompt 時最容易犯的錯誤是什麼？",
@@ -270,7 +412,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "最常見的錯誤是背景資訊不足或模糊，導致 AI 無法準確理解需求而猜測。"
   },
   {
-    id: 19,
+    id: 29,
     section: 2,
     week: 2,
     question: "若主管的 Prompt 得到不滿意的結果，第一步應該如何改進？",
@@ -284,7 +426,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "應該檢查 Prompt 本身，補充背景資訊或修改角色定位，通常就能獲得更好的結果。"
   },
   {
-    id: 20,
+    id: 30,
     section: 2,
     week: 2,
     question: "Prompt 溝通術的最終目的是什麼？",
@@ -300,7 +442,7 @@ export const quizData: QuizQuestion[] = [
 
   // Week 3 - 數據處理工具 (Q21-Q30)
   {
-    id: 21,
+    id: 31,
     section: 3,
     week: 3,
     question: "在企業數據處理中，主管最常面臨的挑戰是什麼？",
@@ -314,7 +456,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "企業數據處理的核心挑戰是量大、雜亂、缺乏統一框架，Gemini 的數據工具能有效解決這些問題。"
   },
   {
-    id: 22,
+    id: 32,
     section: 3,
     week: 3,
     question: "Canvas 的「精準編輯器」功能在數據處理中的優勢是什麼？",
@@ -328,7 +470,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "Canvas 允許主管進行局部修改，針對不滿意的部分進行精準調整，無需重新生成整份文件。"
   },
   {
-    id: 23,
+    id: 33,
     section: 3,
     week: 3,
     question: "當主管需要分析一份結構複雜的 PDF 報告時，最適合使用什麼功能？",
@@ -342,7 +484,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "Gemini 的一般對話框支持文件上傳功能，可以快速分析 PDF 內容並提取關鍵資訊。"
   },
   {
-    id: 24,
+    id: 34,
     section: 3,
     week: 3,
     question: "Deep Research 對於數據分析的優勢是什麼？",
@@ -356,7 +498,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "Deep Research 能進行多源數據的交叉驗證和深層趨勢分析，特別適合複雜的數據分析任務。"
   },
   {
-    id: 25,
+    id: 35,
     section: 3,
     week: 3,
     question: "在使用 AI 進行數據處理時，主管應該如何確保數據安全？",
@@ -370,7 +512,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "應確認公司的資訊安全政策，只上傳必要的去敏感化數據，保護企業的商業機密。"
   },
   {
-    id: 26,
+    id: 36,
     section: 3,
     week: 3,
     question: "當需要整理員工名單並生成部門報告時，最效率的步驟是什麼？",
@@ -384,7 +526,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "透過上傳 Excel 並指示 AI 進行分類和報告生成，可以大幅提升效率。"
   },
   {
-    id: 27,
+    id: 37,
     section: 3,
     week: 3,
     question: "在數據視覺化中，Canvas 的角色是什麼？",
@@ -398,7 +540,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "Canvas 可以將數據轉化為美化的圖表和信息圖，並支援局部修改，非常適合數據視覺化。"
   },
   {
-    id: 28,
+    id: 38,
     section: 3,
     week: 3,
     question: "主管應該如何檢查 AI 生成的數據分析結果？",
@@ -412,7 +554,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "應該抽樣驗證 AI 的邏輯推導，並對比已知的業務數據，確保分析結果的準確性。"
   },
   {
-    id: 29,
+    id: 39,
     section: 3,
     week: 3,
     question: "哪種情況下不應該使用 AI 進行數據處理？",
@@ -426,7 +568,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "不應該上傳高度機密的未去敏感化企業數據，應遵守公司的資訊安全政策。"
   },
   {
-    id: 30,
+    id: 40,
     section: 3,
     week: 3,
     question: "數據處理工具的核心價值是什麼？",
@@ -442,7 +584,7 @@ export const quizData: QuizQuestion[] = [
 
   // Week 4 - Canvas, 建立影片, 創作音樂 (Q31-Q40)
   {
-    id: 31,
+    id: 41,
     section: 4,
     week: 4,
     question: "Canvas 相比傳統對話框的最大優勢是什麼？",
@@ -456,7 +598,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "Canvas 的優勢是提供獨立的編輯空間，主管可以看著 AI 生成的內容進行實時迭代和精準修改。"
   },
   {
-    id: 32,
+    id: 42,
     section: 4,
     week: 4,
     question: "主管想要快速生成一份初稿簡報，最適合的工作流程是什麼？",
@@ -470,7 +612,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "利用 Canvas 快速生成初稿，然後進行精準潤飾，是最高效的簡報製作流程。"
   },
   {
-    id: 33,
+    id: 43,
     section: 4,
     week: 4,
     question: "在使用「建立影片」功能時，最重要的是什麼？",
@@ -484,7 +626,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "清晰的視覺描述和配額管理是使用「建立影片」的關鍵，要充分利用每日的有限配額。"
   },
   {
-    id: 34,
+    id: 44,
     section: 4,
     week: 4,
     question: "「建立影片」適合用來製作什麼類型的內容？",
@@ -498,7 +640,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "可用於製作簡報開場動畫、產品展示影片、員工培訓影片等多種商業內容。"
   },
   {
-    id: 35,
+    id: 45,
     section: 4,
     week: 4,
     question: "在企業簡報中加入 AI 生成的背景音樂有什麼優勢？",
@@ -512,7 +654,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "AI 生成的背景音樂不僅無版權困擾，還能完全符合簡報的品牌調性，提升專業感。"
   },
   {
-    id: 36,
+    id: 46,
     section: 4,
     week: 4,
     question: "「創作音樂」的 Prompt 應該包含什麼元素？",
@@ -526,7 +668,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "應該明確指定風格、節奏、用途、長度、情緒等要素，才能生成符合需求的背景音樂。"
   },
   {
-    id: 37,
+    id: 47,
     section: 4,
     week: 4,
     question: "主管在製作年度總結簡報時，最有效的多媒體組合是什麼？",
@@ -540,7 +682,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "結合文字內容、Canvas 編輯、背景音樂和開場動畫，能製作出專業且引人入勝的簡報。"
   },
   {
-    id: 38,
+    id: 48,
     section: 4,
     week: 4,
     question: "在使用「建立影片」時，應該如何應對配額限制？",
@@ -554,7 +696,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "應該優先製作最重要的影片，撰寫精良的 Prompt，充分利用每日配額做出最優質的作品。"
   },
   {
-    id: 39,
+    id: 49,
     section: 4,
     week: 4,
     question: "Canvas 的迭代功能對簡報製作的幫助是什麼？",
@@ -568,7 +710,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "透過迭代功能，主管可以精準修改 Canvas 中不滿意的局部內容，無需費力重新生成整份簡報。"
   },
   {
-    id: 40,
+    id: 50,
     section: 4,
     week: 4,
     question: "第四週學習的三大工具 (Canvas、建立影片、創作音樂) 的共同特點是什麼？",
@@ -584,7 +726,7 @@ export const quizData: QuizQuestion[] = [
 
   // 第五部分：綜合應用 (Q41-Q60)
   {
-    id: 41,
+    id: 51,
     section: 5,
     question: "一位產品經理需要在一週內完成新產品上市的所有宣傳物料，應該如何運用 Gemini 的六大工具？",
     options: [
@@ -597,7 +739,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "這是典型的多工具整合應用，充分發揮 Gemini 在內容創意到多媒體製作的全流程能力。"
   },
   {
-    id: 42,
+    id: 52,
     section: 5,
     question: "主管在制定新年度的管理策略時，哪個 Gemini 工具最能幫助批判性思考？",
     options: [
@@ -610,7 +752,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "引導式學習透過提問引導思考，最適合幫助主管進行深度的戰略分析和批判性思考。"
   },
   {
-    id: 43,
+    id: 53,
     section: 5,
     question: "一家製造業公司想要培訓 50 位中階管理人員，如何利用 Gemini 設計培訓流程？",
     options: [
@@ -623,7 +765,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "這是企業內部培訓的最佳實踐，結合多個工具打造系統化的高效能培訓方案。"
   },
   {
-    id: 44,
+    id: 54,
     section: 5,
     question: "主管遇到一個複雜的跨部門協調問題，應該如何運用 Gemini 協助決策？",
     options: [
@@ -636,7 +778,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "這是將 AI 作為決策輔助的最佳流程，充分收集資訊、深化思考、組織方案。"
   },
   {
-    id: 45,
+    id: 55,
     section: 5,
     question: "在撰寫企業年報時，主管應該採用什麼樣的 Gemini 工作流程？",
     options: [
@@ -649,7 +791,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "企業年報需要多層次的內容整合，這個流程最能確保品質和效率的結合。"
   },
   {
-    id: 46,
+    id: 56,
     section: 5,
     question: "一位銷售主管想要為不同產品線客戶製作個性化的提案簡報，最有效的方式是什麼？",
     options: [
@@ -662,7 +804,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "Canvas 的快速生成和迭代功能，最適合製作大量客製化內容，大幅提升銷售效率。"
   },
   {
-    id: 47,
+    id: 57,
     section: 5,
     question: "當主管需要準備一場重要的董事會報告時，哪種多媒體組合最具說服力？",
     options: [
@@ -675,7 +817,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "專業的多媒體組合應該是簡約但精準，文字、圖像、音樂、數據的有機結合，而非堆砌效果。"
   },
   {
-    id: 48,
+    id: 58,
     section: 5,
     question: "主管想要建立一套內部知識管理系統，應該如何利用 Gemini？",
     options: [
@@ -688,7 +830,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "這是建立現代化知識管理系統的最佳方案，充分發揮 AI 在內容組織和視覺化的優勢。"
   },
   {
-    id: 49,
+    id: 59,
     section: 5,
     question: "在使用 Gemini 進行企業決策輔助時，主管最應該避免什麼？",
     options: [
@@ -701,7 +843,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "AI 是決策輔助工具，主管必須保持批判性思考，不能完全依賴 AI 的建議。"
   },
   {
-    id: 50,
+    id: 60,
     section: 5,
     question: "當面臨一個行業轉型問題時，應該如何系統地運用 Gemini 的多個工具？",
     options: [
@@ -714,7 +856,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "系統的運用多個工具，才能應對複雜的戰略問題，從資訊蒐集到方案制定的全流程都有保障。"
   },
   {
-    id: 51,
+    id: 61,
     section: 5,
     question: "一個銷售團隊想要統計過去一年的銷售數據並製作視覺化報告，最佳流程是什麼？",
     options: [
@@ -727,7 +869,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "這是數據分析到視覺化的完整工作流程，充分發揮 Gemini 在數據處理和內容創意的優勢。"
   },
   {
-    id: 52,
+    id: 62,
     section: 5,
     question: "在進行員工績效評估時，如何運用 Gemini 提高評估的客觀性？",
     options: [
@@ -740,7 +882,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "AI 可以提供數據分析的客觀視角，配合引導式思考，能顯著提高績效評估的公正性。"
   },
   {
-    id: 53,
+    id: 63,
     section: 5,
     question: "主管在應對一次市場危機時，應該如何快速運用 Gemini 制定應對方案？",
     options: [
@@ -753,7 +895,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "在危機時刻，高效的 AI 工作流程能顯著加快決策速度，這是 AI 應用的關鍵價值體現。"
   },
   {
-    id: 54,
+    id: 64,
     section: 5,
     question: "當需要與外國客戶進行商務溝通時，主管應該如何運用 Gemini？",
     options: [
@@ -766,7 +908,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "Gemini 不僅能翻譯，還能確保商務用語的準確性和專業度，Canvas 則能進一步優化表達。"
   },
   {
-    id: 55,
+    id: 65,
     section: 5,
     question: "在製定部門年度計畫時，應該如何系統地運用 Gemini 確保計畫的完整性？",
     options: [
@@ -779,7 +921,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "系統化的運用 AI，能確保年度計畫既符合市場趨勢，又經過深度的戰略思考，提高計畫品質。"
   },
   {
-    id: 56,
+    id: 66,
     section: 5,
     question: "主管想要建立一套員工培訓課程體系，哪個工具組合最有效？",
     options: [
@@ -792,7 +934,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "這個工具組合能打造一個現代化、高互動、多媒體的培訓課程體系，提升學習效果。"
   },
   {
-    id: 57,
+    id: 67,
     section: 5,
     question: "當需要進行跨部門的溝通和協調時，主管應該優先使用哪個工具？",
     options: [
@@ -805,7 +947,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "Canvas 和引導式學習的結合，能確保跨部門溝通既清晰又包容，提高協作效率。"
   },
   {
-    id: 58,
+    id: 68,
     section: 5,
     question: "在進行客戶提案時，如何運用 Gemini 提高成功率？",
     options: [
@@ -818,7 +960,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "深入了解客戶背景、製作客製化方案、打造專業的多媒體呈現，是提高提案成功率的關鍵。"
   },
   {
-    id: 59,
+    id: 69,
     section: 5,
     question: "主管在學習新的行業知識時，最應該如何運用引導式學習？",
     options: [
@@ -831,7 +973,7 @@ export const quizData: QuizQuestion[] = [
     explanation: "引導式學習的價值在於培養深度思考能力，不是直接提供答案，而是引導學習者自己發現答案。"
   },
   {
-    id: 60,
+    id: 70,
     section: 5,
     question: "經過四週的 Gemini 課程學習，主管最應該帶走的核心價值是什麼？",
     options: [

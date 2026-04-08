@@ -14,6 +14,45 @@ export interface Course {
 }
 
 export const courseData: Course[] = [
+  // Week 0 - Pre-course Preparation
+  {
+    id: "0-1",
+    week: 0,
+    module: 1,
+    title: "Gemini 註冊與跨裝置上手指南",
+    description: "課程前置作業：帳號準備與多平台登入指南",
+    pages: [
+      {
+        title: "課程單元：Gemini 註冊與跨裝置上手指南",
+        content: "本單元將引導你完成 Gemini 的註冊與設置，確保你能在各種裝置上順利使用。"
+      },
+      {
+        title: "課前準備：Google 帳號",
+        content: "Gemini 是 Google 開發的生成式 AI，使用前提是你必須擁有一個 Google 帳號 (@gmail.com)。\n\n個人帳號：\n直接前往官網即可使用。\n\n企業/教育帳號 (Google Workspace)：\n需由組織管理員後台開啟「Gemini」權限方可登入。\n\n→ 確保你已經有可用的 Google 帳號"
+      },
+      {
+        title: "電腦網頁版：深度辦公與創作首選",
+        content: "網頁版是功能最完整、最適合處理複雜指令（Prompts）的介面。\n\n官方網址：gemini.google.com\n\n操作三步驟：\n1. 開啟瀏覽器（建議使用 Chrome 以獲得最佳相容性）\n2. 點擊右上方「登入」，輸入 Google 帳密\n3. 進入對話框，開始輸入你的指令\n\n大師私藏撇步：\n在電腦版中，你可以直接利用右側的「匯出至文件」或「在 Gmail 中草擬」，實現 AI 內容與辦公軟體的無縫接軌。"
+      },
+      {
+        title: "行動裝置：隨身攜帶的 AI 助理",
+        content: "根據你使用的手機系統，Gemini 的呼叫方式略有不同。\n\nAndroid 使用者：\n• Android 是 Google 的主場，Gemini 可以完全取代原有的 Google 助理\n• 下載方式：前往 Google Play 商店下載 Google Gemini App\n• 啟動方式：下載後，你可以透過長按電源鍵或說出「Hey Google」來喚醒它\n• 特色：它可以「看見」你的螢幕內容，並針對螢幕上的資訊進行即時分析\n\niOS (iPhone/iPad) 使用者：\n• 在 iOS 上，Gemini 目前整合在 Google App 之中\n• 下載方式：前往 App Store 下載或更新 Google App\n• 啟動方式：開啟 Google App，點擊頂部的 Gemini 切換開關"
+      },
+      {
+        title: "跨平台共通功能概覽",
+        content: "無論使用哪個版本，學員應掌握以下核心介面元素：\n\n對話框：\n輸入文字指令的地方\n\n相機/圖片上傳：\n讓 Gemini 進行視覺辨識（例如：拍冰箱剩菜問食譜）\n\n麥克風：\n透過語音輸入指令，省去打字時間\n\nGemini Live：\n進行即時、流暢的語音對話（類似真人聊天）\n\n歷史紀錄：\n左側側邊欄會記錄過往的對話，方便隨時回溯"
+      },
+      {
+        title: "常見問題 (FAQ) - Part 1",
+        content: "Q：Gemini 需要付費嗎？\nA：基本版免費。如果你需要最強大的模型（如 Gemini 1.5 Pro）及更大的儲存空間，可訂閱 Google One AI Premium 方案。\n\nQ：我有年齡限制嗎？\nA：使用 Gemini 的使用者必須年滿 13 歲（或所在國家的法定年齡），部分進階功能則需年滿 18 歲。"
+      },
+      {
+        title: "準備開始學習",
+        content: "你已經準備好了！\n\n✓ 確認 Google 帳號已就緒\n✓ 在你常用的裝置上安裝/登入 Gemini\n✓ 熟悉各平台的基礎介面\n\n→ 現在就可以開始四週的 Gemini 應用課程\n下一週（第一週）：課程起手式與 AI 趨勢"
+      }
+    ],
+    duration_minutes: 30,
+  },
   // Week 1
   {
     id: "1-1",
