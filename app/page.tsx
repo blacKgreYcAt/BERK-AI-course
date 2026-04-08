@@ -7,7 +7,7 @@ import { courseData } from '@/lib/course-data'
 export default function Home() {
   // 強制 Vercel 重新部署 - v3
   // 按週次組織課程
-  const coursesByWeek = [1, 2, 3, 4].map(week => ({
+  const coursesByWeek = [0, 1, 2, 3, 4].map(week => ({
     week,
     courses: courseData.filter(c => c.week === week)
   }))
@@ -71,7 +71,7 @@ export default function Home() {
                 {/* 週表頭 */}
                 <div style={{ marginBottom: '30px', paddingBottom: '20px', borderBottom: '3px solid #0071e3' }}>
                   <h3 style={{ fontSize: '24px', fontWeight: 900, color: '#0071e3', margin: '0', textTransform: 'uppercase' }}>
-                    第 {week} 週
+                    {week === 0 ? '課前準備' : `第 ${week} 週`}
                   </h3>
                   <p style={{ fontSize: '14px', color: '#999', margin: '8px 0 0 0' }}>
                     {courses.length} 個課程
