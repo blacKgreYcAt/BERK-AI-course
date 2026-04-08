@@ -13,7 +13,7 @@ export default function Home() {
   }))
 
   // 進階應用課程
-  const advancedCourses = courseData.filter(c => c.week >= 5 && c.week <= 8)
+  const advancedCourses = courseData.filter(c => c.week >= 5 && c.week <= 10)
 
   return (
     <div style={{ background: '#f5f5f7', color: '#000000' }}>
