@@ -214,15 +214,15 @@ export default function CardsPage() {
               onClick={() => setIsFlipped(!isFlipped)}
               style={{
                 width: '100%',
-                maxWidth: 'clamp(280px, 70vw, 400px)',
-                aspectRatio: '3/4',
+                maxWidth: 'clamp(280px, 70vw, 500px)',
+                minHeight: 'clamp(350px, 60vh, 700px)',
                 background: '#ffffff',
                 border: '3px solid #0071e3',
                 borderRadius: '16px',
                 cursor: 'pointer',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
+                justifyContent: 'flex-start',
                 alignItems: 'center',
                 textAlign: 'center',
                 transition: 'all 0.3s ease',
@@ -260,7 +260,6 @@ export default function CardsPage() {
                 position: 'relative',
                 zIndex: 1,
                 width: '100%',
-                height: '100%',
                 padding: 'clamp(12px, 4vw, 30px)',
                 display: 'flex',
                 flexDirection: 'column',
@@ -329,12 +328,10 @@ export default function CardsPage() {
                   fontSize: 'clamp(12px, 3vw, 18px)',
                   lineHeight: 1.6,
                   color: '#ffffff',
-                  flex: 1,
-                  minHeight: 0,
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  justifyContent: 'center',
+                  justifyContent: 'flex-start',
                   textShadow: '0 1px 3px rgba(0,0,0,0.4)',
                   backgroundColor: 'rgba(0,0,0,0.3)',
                   padding: 'clamp(10px, 3vw, 20px)',
@@ -345,6 +342,8 @@ export default function CardsPage() {
                   WebkitOverflowScrolling: 'touch',
                   width: '100%',
                   textAlign: 'center',
+                  minHeight: '150px',
+                  maxHeight: '550px',
                 }}>
                   {isFlipped ? (
                     <div style={{ width: '100%' }}>
@@ -386,8 +385,7 @@ export default function CardsPage() {
                   fontSize: 'clamp(10px, 2.5vw, 12px)',
                   color: '#ffffff',
                   textShadow: '0 2px 4px rgba(0,0,0,0.5)',
-                  marginTop: 'auto',
-                  paddingTop: 'clamp(8px, 2vw, 12px)',
+                  paddingTop: 'clamp(12px, 2vw, 16px)',
                 }}>
                   {isFlipped ? '點擊翻回' : '點擊翻開'}
                 </div>
