@@ -61,7 +61,7 @@ export const cardsData: Card[] = [
     number: 6,
     title: "Gemini 費用與年齡限制",
     front: "使用 Gemini 需要付費嗎？有年齡限制嗎？",
-    back: "費用：\n✓ 基本版完全免費\n✓ 進階功能可訂閱 Google One AI Premium\n\n年齡限制：\n✓ 基本使用：年滿 13 歲\n✓ 部分進階功能：年滿 18 歲\n\n→ 絕大多數主管不需付費",
+    back: "費用：\n✓ 基本版完全免費\n✓ 進階功能可訂閱 Google One AI Premium\n\n年齡限制：\n✓ 基本使用：年滿 13 歲\n✓ 部分進階功能：年滿 18 歲\n\n→ 絕大多數功能不需付費，依照使用量而定",
     imagePrompt: "科技風格：錢幣圖示和年齡符號，綠色勾選標記顯示免費，展現成本效益，現代扁平設計"
   },
   {
