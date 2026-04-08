@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "大豐貿易集團AI協作課程",
+  title: "BERK AI 空間 - Gemini 企業協作課程",
   description: "四週完整課程，掌握 Gemini 六大神器",
 };
 

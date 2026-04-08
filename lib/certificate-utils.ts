@@ -159,7 +159,7 @@ export async function generateCertificateCanvas(
     ctx.textAlign = 'center';
 
     // 左邊簽名
-    ctx.fillText('大豐貿易集團', canvas.width / 4, 1380);
+    ctx.fillText('BERK AI 空間', canvas.width / 4, 1380);
     ctx.strokeStyle = '#d4af37';
     ctx.lineWidth = 2;
     ctx.beginPath();

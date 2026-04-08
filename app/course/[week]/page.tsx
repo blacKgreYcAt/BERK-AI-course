@@ -211,9 +211,9 @@ export default function CoursePage() {
           marginTop: '40px',
         }}>
           <p style={{ margin: 0, lineHeight: 1.6 }}>
-            © 2026 大豐貿易集團 • AI 企業協作課程 • 課程與網站規劃：大豐資訊Benjamin •{' '}
-            <a href="mailto:benjaminchu@tfg.com.tw" style={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600 }}>
-              我要提問
+            © 2026 BERK AI 空間 • Gemini 企業協作課程 •{' '}
+            <a href="mailto:contact@berkaispace.com" style={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600 }}>
+              與我們聯繫
             </a>
           </p>
         </div>
@@ -251,9 +251,9 @@ export default function CoursePage() {
         marginTop: '40px',
       }}>
         <p style={{ margin: 0, lineHeight: 1.6 }}>
-          © 2026 大豐貿易集團 • AI 企業協作課程 • 課程與網站規劃：大豐資訊Benjamin •{' '}
-          <a href="mailto:benjaminchu@tfg.com.tw" style={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600 }}>
-            我要提問
+          © 2026 BERK AI 空間 • Gemini 企業協作課程 •{' '}
+          <a href="mailto:contact@berkaispace.com" style={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600 }}>
+            與我們聯繫
           </a>
         </p>
       </div>
