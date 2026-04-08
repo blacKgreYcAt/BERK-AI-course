@@ -43,7 +43,18 @@ export default function CoursePage() {
     return () => window.removeEventListener('keydown', handleKeyPress)
   }, [selectedId, week])
 
-  if (!week) return <div style={{ padding: '40px', color: '#000000', background: '#f5f5f7' }}>加載中...</div>
+  if (!week) {
+    return (
+      <div style={{ padding: '40px', color: '#000000', background: '#f5f5f7', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
+          <p style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>加載中...</p>
+          <p style={{ fontSize: '14px', color: '#666', marginBottom: '10px' }}>路徑: {pathname}</p>
+          <p style={{ fontSize: '12px', color: '#999' }}>如果一直停留在此，請重新整理頁面或回到首頁重試</p>
+          <Link href="/" style={{ marginTop: '20px', color: '#0071e3', textDecoration: 'underline', display: 'inline-block' }}>← 返回首頁</Link>
+        </div>
+      </div>
+    )
+  }
 
   const courses = courseData.filter(c => c.week === week)
   const course = courses.find(c => c.id === selectedId)
