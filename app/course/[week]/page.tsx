@@ -10,7 +10,18 @@ export default function CoursePage({ params }: { params: Promise<{ week: string 
   const [pageIdx, setPageIdx] = useState(0)
 
   useEffect(() => {
-    Promise.resolve(params).then((p) => setWeek(parseInt(p.week)))
+    const resolveParams = async () => {
+      try {
+        const resolvedParams = await params
+        const weekNum = parseInt(resolvedParams.week, 10)
+        if (!isNaN(weekNum)) {
+          setWeek(weekNum)
+        }
+      } catch (error) {
+        console.error('Failed to resolve params:', error)
+      }
+    }
+    resolveParams()
   }, [params])
 
   // 鍵盤控制事件 - 使用 selectedId 作為依賴，因為它決定了課程
