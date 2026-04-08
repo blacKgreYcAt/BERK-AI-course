@@ -74,7 +74,7 @@ async function initializeData() {
 
     // 4. 創建管理員用戶
     console.log('創建管理員用戶...')
-    const adminEmail = 'benjaminchu0508@gmail.com'
+    const adminEmail = 'admin@berkaispace.com'
 
     // 先查詢是否已存在
     const { data: existingUser } = await supabase
@@ -88,7 +88,7 @@ async function initializeData() {
         .from('users')
         .insert({
           email: adminEmail,
-          name: 'Admin - Benjamin Chu',
+          name: 'Admin',
           department: 'Administration',
         })
 
