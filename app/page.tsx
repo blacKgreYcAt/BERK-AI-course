@@ -70,6 +70,7 @@ export default function Home() {
             gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
             gap: '40px',
             marginTop: '60px',
+            gridAutoRows: 'auto',
           }}>
             {coursesByWeek.map(({ week, courses }) => (
               <div key={week} style={{ display: 'flex', flexDirection: 'column' }}>
@@ -84,7 +85,7 @@ export default function Home() {
                 </div>
 
                 {/* 該週的課程卡片 */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '20px', gridAutoRows: '1fr' }}>
                   {courses.map((course) => (
                     <Link key={course.id} href={`/course/${course.week}?id=${course.id}`}>
                       <div
@@ -97,7 +98,7 @@ export default function Home() {
                           border: '2px solid #0071e3',
                           cursor: 'pointer',
                           transition: 'all 0.3s ease',
-                          minHeight: '200px',
+                          height: '100%',
                         }}
                         onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
                           const el = e.currentTarget as HTMLDivElement;
