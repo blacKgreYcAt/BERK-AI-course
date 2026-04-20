@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { cardsData } from '@/lib/cards-data'
+import { updateCardsProgress } from '@/lib/progress-utils'
 import { useState, useEffect } from 'react'
 
 export default function CardsPage() {
@@ -129,7 +130,7 @@ export default function CardsPage() {
           >
             全部 ({cardsData.length})
           </button>
-          {[0, 1, 2, 3, 4].map(week => {
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(week => {
             const weekCount = cardsData.filter(c => c.week === week).length
             return (
               <button
@@ -211,7 +212,14 @@ export default function CardsPage() {
 
             {/* Card */}
             <div
-              onClick={() => setIsFlipped(!isFlipped)}
+              onClick={() => {
+                const newFlipped = !isFlipped
+                setIsFlipped(newFlipped)
+                // Track card flip in progress
+                if (newFlipped && currentCard) {
+                  updateCardsProgress(currentCard.id, true)
+                }
+              }}
               style={{
                 width: '100%',
                 maxWidth: 'clamp(280px, 70vw, 500px)',
